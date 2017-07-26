@@ -4,7 +4,7 @@ body
   background: #161616
   color: white
   font-family: 'Open Sans', sans-serif
-  overflow: hidden
+  overflow-x: hidden
 
 .ui
   position: fixed
@@ -61,6 +61,7 @@ body
   top: 76px
   left: 50%
   transform: translateX(-50%)
+  margin-left: -10px
   font-size: 1.25rem
   font-weight: 400
   transition: 0.4s
@@ -116,6 +117,18 @@ body
   margin-right: auto
   width: 1600px
   margin-bottom: 600px
+
+  h1
+    margin-top: 500px
+
+  p
+    margin-top: 620px
+    font-size: 20px
+    line-height: 40px
+    color: #505050
+
+    span
+      color: #fff
 
 .about-button
   position: relative
@@ -200,6 +213,48 @@ body
   &:hover
     width: 144px
     transition: 0.4s
+
+.works
+  position: relative
+  margin-left: auto
+  margin-right: auto
+  margin-bottom: 120px
+  width: 1600px
+  height: 836px
+
+  div:last-child
+    font-size: 14px
+    margin-top: 96px
+    margin-bottom: 56px
+
+  h1
+    font-size: 44px
+    font-weight: 400
+    width: 132px
+    border-bottom: #fff solid 3px
+    margin-bottom: 96px
+
+  ul
+    position: relative
+    list-style-type: none
+    margin-left: -40px
+    height: 836px
+    width: 100%
+    white-space: nowrap
+    display: inline-block
+
+    li
+      margin-right: 168px
+      width: 1440px
+      height: 750px
+      background-color: #fff
+      display: inline-block
+      vertical-align: middle
+      background-image: url('/images/recent-work.png')
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center
+
 
 @keyframes menu
   0%

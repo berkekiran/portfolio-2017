@@ -6,6 +6,16 @@ body
   font-family: 'Open Sans', sans-serif
   overflow-x: hidden
 
+::-webkit-scrollbar
+  display: none
+
+.wrapper
+  position: relative
+  width: 1600px
+  height: auto
+  margin-left: auto
+  margin-right: auto
+
 .ui
   position: fixed
   z-index: 1
@@ -61,10 +71,16 @@ body
   top: 76px
   left: 50%
   transform: translateX(-50%)
-  margin-left: -10px
   font-size: 1.25rem
   font-weight: 400
   transition: 0.4s
+  text-align: center
+
+  span:first-child
+    opacity: 1
+
+  span:last-child
+    opacity: 0
 
 .recent-work
   position: relative
@@ -222,16 +238,23 @@ body
   width: 1600px
   height: 836px
 
-  div:last-child
-    font-size: 14px
-    margin-top: 96px
-    margin-bottom: 56px
-
-  h1
+  h1:first-child
     font-size: 44px
     font-weight: 400
     width: 132px
     border-bottom: #fff solid 3px
+    margin-bottom: 96px
+
+  h1:last-child
+    position: relative
+    margin-left: auto
+    margin-right: auto
+    font-size: 20px
+    font-weight: 400
+    width: 96px
+    padding-bottom: 4px
+    border-bottom: #fff solid 2px
+    margin-top: -32px
     margin-bottom: 96px
 
   ul
@@ -255,6 +278,61 @@ body
       background-size: cover
       background-position: center
 
+.footer
+  position: relative
+  width: 1600px
+  margin-left: auto
+  margin-right: auto
+  display: inline-block
+  text-align: center
+  margin-top: 120px
+
+  .right-f
+    position: relative
+    margin-left: auto
+    margin-right: auto
+    display: inline-block
+    float: left
+
+    .year
+      font-size: 14px
+      margin-top: 96px
+      margin-bottom: 56px
+      width: 100px
+      display: inline-block
+      margin-right: 528px
+
+    .social
+      position: relative
+      list-style: none
+      width: 275px
+      display: inline-block
+      margin-left: auto
+      margin-right: auto
+
+      li
+        display: inline-block
+        margin-right: 10px
+        transition: 0.4s
+
+        &:hover
+          opacity: 0.4
+          transition: 0.4s
+  .mail
+    float: right
+    font-size: 14px
+    margin-top: 96px
+    margin-bottom: 56px
+    display: inline-block
+
+    a
+      text-decoration: none
+      color: #fff
+      transition: 0.4s
+
+      &:hover
+        opacity: 0.4
+        transition: 0.4s
 
 @keyframes menu
   0%

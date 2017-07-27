@@ -32,80 +32,134 @@
   </head>
 
   <body>
+    <section class="wrapper">
+      <section class="ui" ng-controller="menuController">
+        <div class="menu-button" ng-click="menuclick()">
+          <span class="menu-part" ng-style="menuButtonstyle"></span>
+          <span class="menu-part" ng-style="menuButtonstyle"></span>
+          <span class="menu-part" ng-style="menuButtonstyle"></span>
+          <span class="menu-part" ng-style="menuButtonstyle"></span>
+        </div>
+        <span class="section-name">
+          <span>Berke <b>Kiran</b></span>
+          <br>
+          <span>About</span>
+        </span>
+        <div class="menu-ui" ng-style="menustyle">
+          <div class="menu-wrapper">
+            <div class="menu-ui-intro" ng-style="menulinkstyle">Intro</div>
+            <br>
+            <div class="menu-ui-about" ng-style="menulinkstyle1">About</div>
+            <br>
+            <div class="menu-ui-works" ng-style="menulinkstyle2">Works</div>
+            <br>
+            <br>
+            <br>
+            <div class="menu-ui-contact" ng-style="menulinkstyle3">Contact</div>
+            </div>
+        </div>
+      </section>
 
-    <section class="ui" ng-controller="menuController">
-      <div class="menu-button" ng-click="menuclick()">
-        <span class="menu-part" ng-style="menuButtonstyle"></span>
-        <span class="menu-part" ng-style="menuButtonstyle"></span>
-        <span class="menu-part" ng-style="menuButtonstyle"></span>
-        <span class="menu-part" ng-style="menuButtonstyle"></span>
-      </div>
-      <span class="section-name">Berke <b>Kiran</b></span>
-      <div class="menu-ui" ng-style="menustyle">
-        <div class="menu-wrapper">
-          <div class="menu-ui-intro" ng-style="menulinkstyle">Intro</div>
+      <section class="recent-work js-tilt" data-tilt>
+        <h1>
+          I'm a self-taught
           <br>
-          <div class="menu-ui-about" ng-style="menulinkstyle1">About</div>
+          3D Character Artist &
           <br>
-          <div class="menu-ui-works" ng-style="menulinkstyle2">Works</div>
+          Front-End Developer.
+        </h1>
+        <div class="explore-button">Explore my Art</div>
+      </section>
+
+      <section class="profile">
+        <div class="about-button">About</div>
+        <p>
+          <span>Hello!</span> I’m <span>Berke Kiran</span> a self-taught <span>3D Character Artist</span> and <span>Front-End Developer</span>.
+          <br>
+          I am specialized in creating <span>3D characters</span> for <span>cinematics</span>, <span>feature film</span>, and <span>games</span>.
+          <br>
+          I love <span>art</span>, <span>science</span>, <span>coding</span>, <span>learning</span> new technologies & <span>improving myself</span>. I was
+          <br>
+          born and grew in <span>Turkey</span>. So I can speak <span>Turkish</span>, <span>English</span> and little bit <span>German</span>.
+          <br>
+          I started to learning <span>game creation</span> at <span>13</span> years old. Now I am living to <span>learn and create</span>
+          <br>
+          something new <span>every day</span>. I graduated high school in <span>2015</span> with a class rank of <span>second</span>
+          <br>
+          Out <span>of 724</span> graduates. Then I honored with <span>Outstanding Achievement Certificate</span>
+          <br>
+          & now going to <span>KB.University</span> in Karabuk. I'm learning <span>computer engineering</span>.
           <br>
           <br>
-          <br>
-          <div class="menu-ui-contact" ng-style="menulinkstyle3">Contact</div>
-          </div>
-      </div>
+          If you have a <span>project</span> you'd like to <span>discuss</span>, feel free to <span>reach out</span>.
+        </p>
+      </section>
+
+      <section class="works" ng-controller="worksController">
+        <h1>Works</h1>
+        <div class="works-slider">
+          <ul class="works-ul">
+            <li ng-repeat="work in works"></li>
+          </ul>
+        </div>
+        <h1>Follow me</h1>
+      </section>
+
+      <section class="footer">
+        <div class="right-f">
+          <div class="year">© 2017</div>
+          <ul class="social">
+            <li>
+              <a href="https://www.linkedin.com/in/berkekiran/">
+                <img height="16" width="16" src="images/social-buttons/linkedin-logo.svg">
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/berkekiran">
+                <img height="16" width="16" src="images/social-buttons/github-logo.svg">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.artstation.com/artist/berkekiran">
+                <img height="16" width="16" src="images/social-buttons/artstation-logo.svg">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.behance.net/berkekiran">
+                <img height="16" width="16" src="images/social-buttons/behance-logo.svg">
+              </a>
+            </li>
+            <li>
+              <a href="https://vimeo.com/berkekiran">
+                <img height="16" width="16" src="images/social-buttons/vimeo-logo.svg">
+              </a>
+            </li>
+            <li>
+              <a href="https://soundcloud.com/berkekiran">
+                <img height="16" width="16" src="images/social-buttons/soundcloud-logo.svg">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/berkekiran.official/">
+                <img height="16" width="16" src="images/social-buttons/instagram-logo.svg">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/xBerkeKiranx">
+                <img height="16" width="16" src="images/social-buttons/facebook-logo.svg">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mail">Sounds Interesting? <a href="mailto:berkekiranofficial@hotmail.com?Subject=Hi Berke">Let's Talk!</a></div>
+      </section>
+
     </section>
 
-    <section class="recent-work js-tilt" data-tilt>
-      <h1>
-        I'm a self-taught
-        <br>
-        3D Character Artist &
-        <br>
-        Front-End Developer.
-      </h1>
-      <div class="explore-button">Explore my Art</div>
-    </section>
-
-    <section class="profile">
-      <div class="about-button">About</div>
-      <p>
-        <span>Hello!</span> I’m <span>Berke Kiran</span> a self-taught <span>3D Character Artist</span> and <span>Front-End Developer</span>.
-        <br>
-        I am specialized in creating <span>3D characters</span> for <span>cinematics</span>, <span>feature film</span>, and <span>games</span>.
-        <br>
-        I love <span>art</span>, <span>science</span>, <span>coding</span>, <span>learning</span> new technologies & <span>improving myself</span>. I was
-        <br>
-        born and grew in <span>Turkey</span>. So I can speak <span>Turkish</span>, <span>English</span> and little bit <span>German</span>.
-        <br>
-        I started to learning <span>game creation</span> at <span>13</span> years old. Now I am living to <span>learn and create</span>
-        <br>
-        something new <span>every day</span>. I graduated high school in <span>2015</span> with a class rank of <span>second</span>
-        <br>
-        Out <span>of 724</span> graduates. Then I honored with <span>Outstanding Achievement Certificate</span>
-        <br>
-        & now going to <span>KB.University</span> in Karabuk. I'm learning <span>computer engineering</span>.
-        <br>
-        <br>
-        If you have a <span>project</span> you'd like to <span>discuss</span>, feel free to <span>reach out</span>.
-      </p>
-    </section>
-
-    <section class="works" ng-controller="worksController">
-      <h1>Works</h1>
-      <div class="works-slider">
-        <ul class="works-ul">
-          <li ng-repeat="work in works"></li>
-        </ul>
-      </div>
-      <div>© 2017</div>
-    </section>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/tilt.js"></script>
-    <script type="text/javascript" src="js/tiltOptions.js"></script>
-    <script type="text/javascript" src="js/portfolio.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/tilt.js"></script>
+  <script type="text/javascript" src="js/tiltOptions.js"></script>
+  <script type="text/javascript" src="js/portfolio.js"></script>
   </body>
 
 </html>

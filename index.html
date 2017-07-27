@@ -20,6 +20,8 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scrollSpeed.js"></script>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <!--Favicons-->
@@ -31,9 +33,9 @@
     <meta name="theme-color" content="#161616">
   </head>
 
-  <body>
+  <body ng-controller="bodyController">
     <section class="wrapper">
-      <section class="ui" ng-controller="menuController">
+      <section class="ui">
         <div class="menu-button" ng-click="menuclick()">
           <span class="menu-part" ng-style="menuButtonstyle"></span>
           <span class="menu-part" ng-style="menuButtonstyle"></span>
@@ -41,21 +43,20 @@
           <span class="menu-part" ng-style="menuButtonstyle"></span>
         </div>
         <span class="section-name">
-          <span>Berke <b>Kiran</b></span>
-          <br>
-          <span>About</span>
+          <div id="section-name0">Berke <b>Kiran</b></div>
+          <div id="section-name1">About</b></div>
         </span>
         <div class="menu-ui" ng-style="menustyle">
           <div class="menu-wrapper">
-            <div class="menu-ui-intro" ng-style="menulinkstyle">Intro</div>
+            <div class="menu-ui-intro" ng-click="introclick()" ng-style="menulinkstyle">Intro</div>
             <br>
-            <div class="menu-ui-about" ng-style="menulinkstyle1">About</div>
+            <div class="menu-ui-about" ng-click="aboutclick()"  ng-style="menulinkstyle1">About</div>
             <br>
-            <div class="menu-ui-works" ng-style="menulinkstyle2">Works</div>
+            <div class="menu-ui-works" ng-click="worksclick()"  ng-style="menulinkstyle2">Works</div>
             <br>
             <br>
             <br>
-            <div class="menu-ui-contact" ng-style="menulinkstyle3">Contact</div>
+            <a href="mailto:berkekiranofficial@hotmail.com?Subject=Hi Berke"><div class="menu-ui-contact" ng-style="menulinkstyle3">Contact</div></a>
             </div>
         </div>
       </section>
@@ -72,9 +73,9 @@
       </section>
 
       <section class="profile">
-        <div class="about-button">About</div>
+        <div ng-click="aboutclick()" id="about-button" class="about-button">About</div>
         <p>
-          <span>Hello!</span> I’m <span>Berke Kiran</span> a self-taught <span>3D Character Artist</span> and <span>Front-End Developer</span>.
+          <span id="about">Hello!</span> I’m <span>Berke Kiran</span> a self-taught <span>3D Character Artist</span> and <span>Front-End Developer</span>.
           <br>
           I am specialized in creating <span>3D characters</span> for <span>cinematics</span>, <span>feature film</span>, and <span>games</span>.
           <br>
@@ -95,7 +96,7 @@
         </p>
       </section>
 
-      <section class="works" ng-controller="worksController">
+      <section class="works">
         <h1>Works</h1>
         <div class="works-slider">
           <ul class="works-ul">
@@ -156,7 +157,6 @@
 
     </section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/tilt.js"></script>
   <script type="text/javascript" src="js/tiltOptions.js"></script>
   <script type="text/javascript" src="js/portfolio.js"></script>

@@ -70,9 +70,9 @@ body {
   font-weight: 400;
   transition: 0.4s;
   text-align: center; }
-  .section-name span:first-child {
+  .section-name div:first-child {
     opacity: 1; }
-  .section-name span:last-child {
+  .section-name div:last-child {
     opacity: 0; }
 
 .recent-work {
@@ -82,15 +82,15 @@ body {
   margin-right: auto;
   width: 1600px;
   height: 500px;
+  padding-top: 120px;
+  margin-bottom: -120px;
+  filter: grayscale(100%);
+  transition: 0.4s;
   background-color: #161616;
   background-image: url("/images/recent-work.png");
   background-repeat: no-repeat;
   background-size: 100% auto;
-  background-position: center;
-  padding-top: 120px;
-  margin-bottom: -120px;
-  filter: grayscale(100%);
-  transition: 0.4s; }
+  background-position: center; }
   .recent-work:hover {
     filter: grayscale(0);
     transition: 0.4s; }
@@ -178,6 +178,9 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%); }
+  .menu-wrapper a {
+    text-decoration: none;
+    color: #fff; }
 
 .menu-ui-intro {
   width: 66px;
@@ -223,7 +226,7 @@ body {
     font-weight: 400;
     width: 132px;
     border-bottom: #fff solid 3px;
-    margin-bottom: 96px; }
+    margin-bottom: 66px; }
   .works h1:last-child {
     position: relative;
     margin-left: auto;
@@ -233,8 +236,8 @@ body {
     width: 96px;
     padding-bottom: 4px;
     border-bottom: #fff solid 2px;
-    margin-top: -32px;
-    margin-bottom: 96px; }
+    margin-top: -42px;
+    margin-bottom: 76px; }
   .works ul {
     position: relative;
     list-style-type: none;
@@ -262,7 +265,7 @@ body {
   margin-right: auto;
   display: inline-block;
   text-align: center;
-  margin-top: 120px; }
+  margin-top: 100px; }
   .footer .right-f {
     position: relative;
     margin-left: auto;
@@ -338,6 +341,30 @@ body {
     opacity: 1; }
   50% {
     opacity: 0.2; }
+  100% {
+    opacity: 0; } }
+@keyframes section-name {
+  0% {
+    opacity: 0;
+    margin-top: -20px; }
+  100% {
+    opacity: 1;
+    margin-top: 0px; } }
+@keyframes section-name-off {
+  0% {
+    opacity: 1;
+    margin-top: 0px; }
+  100% {
+    opacity: 0;
+    margin-top: -20px; } }
+@keyframes opacity {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes opacity-off {
+  0% {
+    opacity: 1; }
   100% {
     opacity: 0; } }
 

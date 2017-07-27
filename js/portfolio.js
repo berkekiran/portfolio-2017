@@ -1,5 +1,25 @@
 var app = angular.module("portfolio",[]);
-app.controller("menuController", function($scope, $timeout){
+app.controller("bodyController", function($scope, $timeout){
+
+  $scope.aboutclick = function(){
+    $('html, body').animate({
+ 	        scrollTop: 1200
+ 	    }, 1600);
+  }
+
+  $scope.introclick = function(){
+    $('html, body').animate({
+ 	        scrollTop: 0
+ 	    }, 1600);
+  }
+
+  $scope.worksclick = function(){
+    $('html, body').animate({
+ 	        scrollTop: 2480
+ 	    }, 1600);
+  }
+
+
   $scope.menuclick = function(){
 
     if($(".menu-ui").css('margin-left') == "-800px"){
@@ -49,8 +69,7 @@ app.controller("menuController", function($scope, $timeout){
       }
     }
   }
-});
-app.controller("worksController", function($scope){
+
   $scope.works = ["Portfolio 2017",
                  "Video Games Center Station",
                  "Portfolio 2016",
@@ -69,4 +88,36 @@ app.controller("worksController", function($scope){
                  "Portfolio 2015",
                  "Photo Galleries",
                  "Quick Write"];
+
+   var sectionName0 = document.getElementById('section-name0');
+   var sectionName1 = document.getElementById('section-name1');
+   var aboutButton = document.getElementById('about-button');
+   window.addEventListener("scroll", function(){
+
+     var timeout;
+     clearTimeout(timeout);
+     timeout = setTimeout(function() {
+       var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+       if(scrollTop >= 700 && scrollTop < 2200){
+         sectionName1.style.animation = "section-name 0.35s linear forwards";
+         sectionName0.style.animation = "section-name-off 0.35s linear forwards";
+         aboutButton.style.animation = "opacity-off 0.35s linear forwards";
+       } else if(scrollTop <= 700 || scrollTop > 2200){
+         sectionName1.style.animation = "section-name-off 0.35s linear forwards";
+         sectionName0.style.animation = "section-name 0.35s linear forwards";
+         aboutButton.style.animation = "opacity 0.35s linear forwards";
+       }
+
+       if(scrollTop >= 160){
+         aboutButton.style.animation = "opacity-off 0.35s linear forwards";
+       } else if(scrollTop <= 160){
+         aboutButton.style.animation = "opacity 0.35s linear forwards";
+       }
+     }, 820);
+
+   }, true);
+
 });
+
+//other javascript codes
+jQuery.scrollSpeed(100, 2000);

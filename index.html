@@ -19,7 +19,8 @@
     <link type="text/css" rel="stylesheet" href="css/portfolio.css">
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-sanitize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/scrollSpeed.js"></script>
     <!-- Fonts -->
@@ -50,9 +51,9 @@
           <div class="menu-wrapper">
             <div class="menu-ui-intro" ng-click="introclick()" ng-style="menulinkstyle">Intro</div>
             <br>
-            <div class="menu-ui-about" ng-click="aboutclick()"  ng-style="menulinkstyle1">About</div>
+            <div class="menu-ui-about" ng-click="aboutclick()" ng-style="menulinkstyle1">About</div>
             <br>
-            <div class="menu-ui-works" ng-click="worksclick()"  ng-style="menulinkstyle2">Works</div>
+            <div class="menu-ui-works" ng-click="worksclick()" ng-style="menulinkstyle2">Works</div>
             <br>
             <br>
             <br>
@@ -61,19 +62,19 @@
         </div>
       </section>
 
-      <section class="recent-work js-tilt" data-tilt>
+      <section class="recent-work js-tilt" id="recent-work0" data-tilt>
         <h1>
-          I'm a self-taught
+          <span id="recent-work-info0">I'm a self-taught</span>
           <br>
-          3D Character Artist &
+          <span id="recent-work-info1">3D Character Artist &</span>
           <br>
-          Front-End Developer.
+          <span id="recent-work-info2">Front-End Developer.</span>
         </h1>
-        <div class="explore-button">Explore my Art</div>
+        <div class="explore-button" id="explore-button" ng-click="exploreclick()">Explore my Art</div>
       </section>
 
       <section class="profile">
-        <div ng-click="aboutclick()" id="about-button" class="about-button">About</div>
+        <div ng-click="aboutoneclick()" id="about-button" class="about-button">About</div>
         <p>
           <span id="about">Hello!</span> I’m <span>Berke Kiran</span> a self-taught <span>3D Character Artist</span> and <span>Front-End Developer</span>.
           <br>
@@ -97,57 +98,37 @@
       </section>
 
       <section class="works">
-        <h1>Works</h1>
+        <h1 class="head-works">Works</h1>
         <div class="works-slider">
           <ul class="works-ul">
-            <li ng-repeat="work in works"></li>
+            <li class="work" ng-repeat="work in works" ng-style="{{work.workSrc}}"></li>
           </ul>
         </div>
-        <h1>Follow me</h1>
+        <p class="followon">
+          <span>Follow Me</span>
+          <br><br><br><br><br><br>
+          <a target="_blank" href="https://www.artstation.com/artist/berkekiran" class="follow">
+            <img height="24" width="24" src="images/social-buttons/artstation-logo.svg"/>
+            <span>Follow me on Artstation</span>
+          </a>
+          <a target="_blank" href="https://github.com/berkekiran" class="follow">
+            <img height="24" width="24" src="images/social-buttons/github-logo.svg"/>
+            <span>Follow me on Github</span>
+          </a>
+          <a target="_blank" href="https://www.behance.net/berkekiran" class="follow">
+            <img height="24" width="24" src="images/social-buttons/behance-logo.svg"/>
+            <span>Follow me on Behance</span>
+          </a>
+        </p>
       </section>
 
       <section class="footer">
         <div class="right-f">
           <div class="year">© 2017</div>
           <ul class="social">
-            <li>
-              <a href="https://www.linkedin.com/in/berkekiran/">
-                <img height="16" width="16" src="images/social-buttons/linkedin-logo.svg">
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/berkekiran">
-                <img height="16" width="16" src="images/social-buttons/github-logo.svg">
-              </a>
-            </li>
-            <li>
-              <a href="https://www.artstation.com/artist/berkekiran">
-                <img height="16" width="16" src="images/social-buttons/artstation-logo.svg">
-              </a>
-            </li>
-            <li>
-              <a href="https://www.behance.net/berkekiran">
-                <img height="16" width="16" src="images/social-buttons/behance-logo.svg">
-              </a>
-            </li>
-            <li>
-              <a href="https://vimeo.com/berkekiran">
-                <img height="16" width="16" src="images/social-buttons/vimeo-logo.svg">
-              </a>
-            </li>
-            <li>
-              <a href="https://soundcloud.com/berkekiran">
-                <img height="16" width="16" src="images/social-buttons/soundcloud-logo.svg">
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/berkekiran.official/">
-                <img height="16" width="16" src="images/social-buttons/instagram-logo.svg">
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/xBerkeKiranx">
-                <img height="16" width="16" src="images/social-buttons/facebook-logo.svg">
+            <li ng-repeat="socialLink in socialLinks">
+              <a target="_blank" ng-href="{{socialLink.socialHref}}">
+                <img height="16" width="16" ng-src="{{socialLink.socialSrc}}">
               </a>
             </li>
           </ul>

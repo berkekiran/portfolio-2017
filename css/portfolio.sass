@@ -2,9 +2,9 @@ body
   margin: 0
   padding: 0
   background: #161616
-  color: white
+  color: #fff
   font-family: 'Open Sans', sans-serif
-  overflow-x: hidden
+  overflow: hidden
   -webkit-user-select: none
   -moz-user-select: none
   -ms-user-select: none
@@ -13,15 +13,18 @@ body
   &:hover
     cursor: default
 
+ul
+  -webkit-padding-start: 0px
+
 ::-webkit-scrollbar
   display: none
 
 .wrapper
-  position: relative
-  width: 1600px
+  width: 88vw
   height: auto
   margin-left: auto
   margin-right: auto
+  top: 0
   left: 0
   right: 0
 
@@ -30,15 +33,15 @@ body
   z-index: 1
   top: 0
   left: 0
-  width: 100%
-  height: 132px
+  width: 100vw
+  height: auto
 
 .menu-button
   position: absolute
-  width: 32px
-  height: 32px
-  top: 76px
-  left: 68px
+  width: 4vh
+  height: 4vh
+  top: 8vh
+  left: 3vw
   transition: 0.4s
 
   &:hover
@@ -59,10 +62,10 @@ body
 
   .menu-part
     display: block
-    width: 100%
+    width: 100vw
     height: 2px
     background-color: #ffffff
-    margin-bottom: 6px
+    margin-bottom: 0.6vh
 
     &:nth-child(1)
       animation: menu .4s infinite forwards alternate-reverse
@@ -76,14 +79,13 @@ body
 .section-name
   position: absolute
   z-index: 8
-  height: 32px
-  top: 76px
-  left: 50%
+  height: 20vh
+  top: 8vh
+  left: 50vw
   transform: translateX(-50%)
-  font-size: 1.25rem
+  font-size: 2vh
   font-weight: 400
   transition: 0.4s
-  text-align: center
 
   div:first-child
     opacity: 1
@@ -92,22 +94,20 @@ body
     opacity: 0
 
 .recent-work
-  position: relative
-  margin-top: 170px
-  width: 1600px
-  height: 500px
+  margin-top: 20vh
+  width: 100%
+  height: 52vh
   margin-left: auto
   margin-right: auto
   left: 0
   right: 0
-  padding-top: 120px
-  margin-bottom: -120px
+  padding-top: 12vh
   filter: grayscale(100%)
   transition: 0.4s
   background-color: #161616
   background-image: url('/images/recent-work/recent-work.png')
   background-repeat: no-repeat
-  background-size: 100% auto
+  background-size: cover
   background-position: center
 
   &:hover
@@ -115,19 +115,20 @@ body
     transition: 0.4s
 
   h1
-    font-size: 4.35rem
+    font-size: 6.4vh
     font-weight: 700
-    margin-left: -90px
+    margin-left: -4vw
+    /* -90px*/
 
 .explore-button
   position: relative
-  margin-top: -20px
-  font-size: 1.25rem
+  margin-top: -3.2vh
+  font-size: 2vh
   font-weight: 400
-  width: 142px
+  width: 14vh
   text-align: left
-  margin-left: -90px
-  padding-bottom: 5px
+  margin-left: -4vw
+  padding-bottom: 0.6vh
   border-bottom: #fff solid 2px
   transition: 0.4s
 
@@ -135,37 +136,33 @@ body
     cursor: pointer
     border-bottom-color: #F44336
     transition: 0.4s
-    width: 176px
+    width: 18vh
 
 .profile
-  position: relative
-  margin-top: 185px
+  margin-top: 6vh
   margin-left: auto
   margin-right: auto
-  width: 1600px
-  margin-bottom: 600px
-
-  h1
-    margin-top: 500px
+  width: 100%
+  margin-bottom: 54vh
 
   p
-    margin-top: 620px
-    font-size: 20px
-    line-height: 40px
+    margin-top: 54vh
+    font-size: 2vh
+    line-height: 4vh
     color: #505050
+    width: 40vw
 
     span
       color: #fff
 
 .about-button
-  position: relative
   margin-left: auto
   margin-right: auto
-  font-size: 1.25rem
+  font-size: 2vh
   font-weight: 400
-  width: 60px
+  width: 6vh
   text-align: center
-  padding-bottom: 5px
+  padding-bottom: 0.5vh
   border-bottom: #fff solid 2px
   transition: 0.4s
 
@@ -173,7 +170,7 @@ body
     cursor: pointer
     border-bottom-color: #F44336
     transition: 0.4s
-    width: 94px
+    width: 9vh
 
 .menu-ui
   position: fixed
@@ -203,7 +200,7 @@ body
 
 .menu-wrapper
   position: absolute
-  top: 50%
+  top: 50vh
   transform: translateY(-50%)
 
   a
@@ -218,6 +215,7 @@ body
   &:hover
     width: 100px
     transition: 0.4s
+
 .menu-ui-about
   width: 84px
   border-bottom: #000 solid 2px
@@ -246,156 +244,164 @@ body
     transition: 0.4s
 
 .works
-  position: relative
   margin-left: auto
   margin-right: auto
-  margin-bottom: 120px
-  width: 1600px
-  height: 836px
+  margin-bottom: 140px
+  width: auto
+  height: auto
+  text-align: center
 
   .head-works
+    margin-left: 80px
     font-size: 44px
     font-weight: 400
-    width: 132px
+    width: 140px
     border-bottom: #fff solid 3px
-    margin-bottom: 66px
+    margin-bottom: 36px
+    padding-bottom: 5px
 
-  .followon
-    position: relative
-    margin-right: auto
-    text-align: center
-    margin-top: -60px
-    margin-left: -52px
-    padding-bottom: 60px
-
-    span:first-child
-      font-size: 28px
-      border-bottom: #fff solid 2px
-      padding-bottom: 5px
-      margin-left: 52px
-
-  .follow
-    font-size: 14px
-    padding-left: 20px
-    padding-right: 20px
-    padding-top: 10px
-    text-align: center
-    padding-bottom: 14px
-    border: #fff solid 2px
-    border-radius: 30px
-    margin-top: -42px
-    margin-bottom: 76px
-    text-decoration: none
-    color: #fff
-    margin-left: 50px
-    width: 260px
-    transition: 0.4s
-
-    span
-      margin-left: 60px
-      color: #fff
-      font-weight: 600
-      text-decoration: none
-
-    img
-      margin-bottom: -8px
-
-    &:hover
-      background-color: #fff
-
-      span
-        color: #161616
-        font-weight: 600
-
-      img
-        filter: invert(100%)
-
-  .follow-link
-    position: relative
+  .head-others
+    margin-top: 140px
     margin-left: auto
     margin-right: auto
-    font-size: 13px
-    text-align: center
-    color: #F44336
-    width: auto
-    max-width: 300px
-    margin-bottom: 20px
-    opacity: 0
-    transition: 0.6s
+    font-size: 24px
+    font-weight: 400
+    width: 84px
+    border-bottom: #fff solid 3px
+    margin-bottom: 36px
+    padding-bottom: 5px
 
-  ul
-    position: relative
+  .works-ul
+    text-align: center
     list-style-type: none
-    margin-left: -40px
-    height: 836px
+    height: 736px
     width: 100%
     white-space: nowrap
     display: inline-block
 
-    li
-      margin-right: 168px
-      width: 1440px
-      height: 750px
-      max-height: 750px
+    .work
+      display: inline-block
+      margin-right: 12px
+      width: 480px
+      height: 736px
+      max-height: 736px
       background-color: #fff
-      display: inline-block
       vertical-align: middle
+      filter: grayscale(100%)
+      transition: 0.4s
 
-.footer
-  position: relative
-  width: 1600px
-  margin-left: auto
-  margin-right: auto
-  display: inline-block
-  text-align: center
-  margin-top: 220px
-
-  .right-f
-    position: relative
-    margin-left: auto
-    margin-right: auto
-    display: inline-block
-    float: left
-
-    .year
-      font-size: 14px
-      margin-top: 96px
-      margin-bottom: 56px
-      width: 100px
-      display: inline-block
-      margin-right: 528px
-
-    .social
-      position: relative
-      list-style: none
-      width: 275px
-      display: inline-block
-      margin-left: auto
-      margin-right: auto
-
-      li
-        display: inline-block
-        margin-right: 10px
+      &:hover
+        filter: grayscale(0%)
         transition: 0.4s
 
-        &:hover
-          opacity: 0.4
-          transition: 0.4s
-  .mail
-    float: right
-    font-size: 14px
-    margin-top: 96px
-    margin-bottom: 56px
+      a
+        display: block
+        width: 100%
+        height: 100%
+        text-decoration: none
+
+  .others-ul
+    position: relative
     display: inline-block
+    list-style-type: none
+    margin-left: auto
+    margin-right: auto
+    text-align: center
+    width: 1400px
+
+    .other
+      margin-left: 50px
+      margin-bottom: 96px
+      height: 320px
+      width: 370px
+      text-align: center
+      border: 0
+      display: inline-block
+      filter: grayscale(100%)
+      transition: 0.4s
+      background-color: #505050
+
+      &:hover
+        filter: grayscale(0%)
+        transition: 0.4s
+
+      &:nth-child(1), &:nth-child(4), &:nth-child(7), &:nth-child(10), &:nth-child(13), &:nth-child(16), &:nth-child(19)
+        margin-left: 0
+
+      a
+        color: #fff
+        text-decoration: none
+
+      img
+        border: 0
+        height: 320px
+        width: 374px
+        background-color: #0D1114
+        margin-bottom: 22px
+
+      span
+        font-size: 14px
+        font-weight: 500
+        line-height: 18px
+
+        span
+          color: #9ea4a9
+          font-size: 13px
+          font-weight: 300
+          line-height: 18px
+
+.footer
+  width: 100%
+  text-align: center
+
+  hr
+    margin-bottom: 96px
+    height: 2px
+    width: 60px
+    border: 0
+    background-color: #fff
+    opacity: 0.3
+
+  .letstalk
+    display: block
+    font-size: 28px
+    margin-bottom: 12px
 
     a
-      text-decoration: none
       color: #fff
       transition: 0.4s
 
       &:hover
         opacity: 0.4
         transition: 0.4s
+
+  .social
+    list-style: none
+    display: inline-block
+    width: 100%
+    text-align: center
+
+    li
+      display: inline-block
+      margin-right: 14px
+      transition: 0.4s
+
+      img
+        height: 20px
+        width: 20px
+
+      &:hover
+        opacity: 0.4
+        transition: 0.4s
+
+  .year
+    width: 100%
+    font-size: 12px
+    letter-spacing: 0.6px
+    margin-top: 92px
+    margin-bottom: 52px
+    text-align: center
+    opacity: 0.3
 
 @keyframes menu
   0%
@@ -438,46 +444,10 @@ body
   100%
     opacity: 0
 
-@keyframes section-name
-  0%
-    opacity: 0
-    margin-top: -20px
-  100%
-    opacity: 1
-    margin-top: 0px
-
-@keyframes section-name-off
-  0%
-    opacity: 1
-    margin-top: 0px
-  100%
-    opacity: 0
-    margin-top: -20px
-
-@keyframes opacity
-  0%
-    opacity: 0
-  100%
-    opacity: 1
-
-@keyframes opacity-off
-  0%
-    opacity: 1
-  100%
-    opacity: 0
-
-@keyframes intro-info
-  0%
-    opacity: 0
-    margin-left: -40px
-  100%
-    opacity: 1
-    margin-left: 0px
-
-@keyframes intro-info-off
-  0%
-    opacity: 1
-    margin-left: 0px
-  100%
-    opacity: 0
-    margin-left: -40px
+@media (max-width:400px)
+@media (min-width:401px) and (max-width:599px)
+@media (min-width:600px) and (max-width:767px)
+@media (min-width:768px) and (max-width:950px)
+@media (min-width:740px) and (max-width:1050px)
+@media (min-width:1060px) and (max-width:1450px)
+@media (min-width:1500px) and (max-width:1820px)

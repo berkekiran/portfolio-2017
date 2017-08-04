@@ -77,63 +77,55 @@
         <div ng-click="aboutoneclick()" id="about-button" class="about-button">About</div>
         <p>
           <span id="about">Hello!</span> I’m <span>Berke Kiran</span> a self-taught <span>3D Character Artist</span> and <span>Front-End Developer</span>.
-          <br>
           I am specialized in creating <span>3D characters</span> for <span>cinematics</span>, <span>feature film</span>, and <span>games</span>.
-          <br>
           I love <span>art</span>, <span>science</span>, <span>coding</span>, <span>learning</span> new technologies & <span>improving myself</span>. I was
-          <br>
           born and grew in <span>Turkey</span>. So I can speak <span>Turkish</span>, <span>English</span> and little bit <span>German</span>.
-          <br>
           I started to learning <span>game creation</span> at <span>13</span> years old. Now I am living to <span>learn and create</span>
-          <br>
           something new <span>every day</span>. I graduated high school in <span>2015</span> with a class rank of <span>second</span>
-          <br>
           Out <span>of 724</span> graduates. Then I honored with <span>Outstanding Achievement Certificate</span>
-          <br>
           & now going to <span>KB.University</span> in Karabuk. I'm learning <span>computer engineering</span>.
           <br>
           <br>
           If you have a <span>project</span> you'd like to <span>discuss</span>, feel free to <span>reach out</span>.
         </p>
+        <img style="float:right; margin-top:-376px; margin-right: 220px;" height="320px" src="images/profile.png"/>
       </section>
 
       <section class="works">
         <h1 class="head-works">Works</h1>
         <div class="works-slider">
           <ul class="works-ul">
-            <li class="work" ng-repeat="work in works" ng-style="{{work.workSrc}}"></li>
+            <li class="work" ng-repeat="work in works" ng-style="{{work.workStyle}}">
+              <a ng-href="{{work.workHref}}"></a>
+            </li>
           </ul>
-        </div>
-        <p class="followon">
-          <span>Follow Me</span>
-          <br><br><br><br><br><br>
-          <a target="_blank" href="https://www.artstation.com/artist/berkekiran" class="follow">
-            <img height="24" width="24" src="images/social-buttons/artstation-logo.svg"/>
-            <span>Follow me on Artstation</span>
-          </a>
-          <a target="_blank" href="https://github.com/berkekiran" class="follow">
-            <img height="24" width="24" src="images/social-buttons/github-logo.svg"/>
-            <span>Follow me on Github</span>
-          </a>
-          <a target="_blank" href="https://www.behance.net/berkekiran" class="follow">
-            <img height="24" width="24" src="images/social-buttons/behance-logo.svg"/>
-            <span>Follow me on Behance</span>
-          </a>
-        </p>
-      </section>
-
-      <section class="footer">
-        <div class="right-f">
-          <div class="year">© 2017</div>
-          <ul class="social">
-            <li ng-repeat="socialLink in socialLinks">
-              <a target="_blank" ng-href="{{socialLink.socialHref}}">
-                <img height="16" width="16" ng-src="{{socialLink.socialSrc}}">
+          <h1 class="head-others">Others</h1>
+          <ul class="others-ul">
+            <li class="other" ng-repeat="other in others">
+              <a ng-href="{{other.link}}">
+                <img ng-style="{'background-color': '{{other.color}}' }" ng-src="{{other.image}}">
+                <br>
+                <span> {{other.name}}
+                  <br>
+                  <span>{{other.year}}</span>
+                </span>
               </a>
             </li>
           </ul>
         </div>
-        <div class="mail">Sounds Interesting? <a href="mailto:berkekiranofficial@hotmail.com?Subject=Hi Berke">Let's Talk!</a></div>
+      </section>
+
+      <section class="footer">
+        <hr/>
+        <span class="letstalk">Sounds Interesting?  <a href="mailto:berkekiranofficial@hotmail.com?Subject=Hi Berke">Let's Talk!</a></span>
+        <ul class="social">
+          <li ng-repeat="socialLink in socialLinks">
+            <a target="_blank" ng-href="{{socialLink.socialHref}}">
+              <img ng-src="{{socialLink.socialSrc}}">
+            </a>
+          </li>
+        </ul>
+        <div class="year">© Berke Kiran 2017</div>
       </section>
 
     </section>

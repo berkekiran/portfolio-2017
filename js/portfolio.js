@@ -1,5 +1,13 @@
+// AngularJs Module and Controller Setup
+
 var app = angular.module("portfolio",['ngSanitize']);
 app.controller("bodyController", function($scope, $timeout){
+
+  // Page Scroll Speed Controller
+
+  jQuery.scrollSpeed(100, 2000);
+
+  // Menu Buttons Animations and Redirect Process
 
   $scope.aboutoneclick = function(){
     $('html, body').animate({
@@ -52,6 +60,8 @@ app.controller("bodyController", function($scope, $timeout){
  	    }, 1400);
   }
 
+  // Burger Menu Animation and Redirect Process
+
   $scope.menuclick = function(){
 
     if($(".menu-ui").css('margin-left') == "-800px"){
@@ -102,36 +112,69 @@ app.controller("bodyController", function($scope, $timeout){
     }
   }
 
-  $scope.works = [
-                  {workName: "orcleader",
-                   workHref: "",
-                   workSrc : {
-                               "background-image" : "url('images/works/orcleader.png')",
-                               "background-size" : "cover",
-                               "background-position" : "top",
-                               "background-repeat" : "no-repeat"
-                             }
-                  },
-                  {workName: "sleepingcreature",
-                   workHref: "",
-                   workSrc : {
-                               "background-image" : "url('images/works/sleepingcreature.png')",
-                               "background-size" : "cover",
-                               "background-position" : "top",
-                               "background-repeat" : "no-repeat"
-                             }
-                  },
-                  {workName: "john",
-                   workHref: "",
-                   workSrc : {
-                               "background-image" : "url('images/works/john.png')",
-                               "background-size" : "cover",
-                               "background-position" : "top",
-                               "background-repeat" : "no-repeat"
-                             }
-                  }
+  // Works List
 
+  $scope.works = [
+                  {workName: "orcleader", workHref: "https://www.artstation.com/artwork/2V4Lx", workStyle : {"background-image" : "url('images/works/orcleader.png')", "background-size" : "cover", "background-position" : "top", "background-repeat" : "no-repeat" } },
+                  {workName: "sleepingcreature", workHref: "https://www.artstation.com/artwork/vdwLA", workStyle : { "background-image" : "url('images/works/sleepingcreature.png')", "background-size" : "cover", "background-position" : "top", "background-repeat" : "no-repeat" } },
+                  {workName: "john", workHref: "https://www.artstation.com/artwork/4Vd4k", workStyle : { "background-image" : "url('images/works/john.png')", "background-size" : "cover", "background-position" : "top", "background-repeat" : "no-repeat" } },
+                  {workName: "thegod", workHref: "https://www.artstation.com/artwork/Nm8g5", workStyle : { "background-image" : "url('images/works/thegod.png')", "background-size" : "cover", "background-position" : "top", "background-repeat" : "no-repeat" } },
                  ];
+
+  // Works slider system
+
+  var numOfSlides = $scope.works.length,
+      move = -40,
+      curSlide = 0;
+
+  function autoSlide() {
+    curSlide++;
+    if(curSlide <= numOfSlides){ changeSlides(); }
+    if(curSlide > numOfSlides) { autoSlideback(); }
+  };
+
+  function autoSlideback() {
+    move = -40;
+  };
+
+  function changeSlides() {
+    if(move == -40){ move = -1600; curSlide +=1; } else {move -= 1600;}
+    $('.works-ul').animate({"margin-left": move},1900);
+  };
+
+  window.addEventListener("scroll", function(){
+    var scrollTop = window.pageYOffset;
+    if(scrollTop >= 2200){
+    }else if(scrollTop < 2000){
+    }
+  }, true);
+
+  // Others List
+
+$scope.others = [
+  { color: '#161616 ', link: 'https://github.com/berkekiran/portfolio-2017', name: 'Portfolio 2017', year: '2017', image: 'images/other-projects/portfolio-2017.png'},
+  { color: '#303030 ', link: 'https://github.com/berkekiran/portfolio-2016-v2', name: 'Portfolio 2016 v2', year: '2016', image: 'images/other-projects/portfolio-2016-v2.png'},
+  { color: '#a8933a ', link: 'https://github.com/berkekiran/video-games-center-station', name: 'Video Games Center Station', year: '2016', image: 'images/other-projects/video-games-center-station.png'},
+  { color: '#303030 ', link: 'https://github.com/berkekiran/portfolio-2016', name: 'Portfolio 2016', year: '2016', image: 'images/other-projects/portfolio-2016.png'},
+  { color: '#303030 ', link: 'https://github.com/berkekiran/portfolio-2015-v5', name: 'Portfolio 2015 v5', year: '2015', image: 'images/other-projects/portfolio-2015-v5.png'},
+  { color: '#cccccc ', link: 'https://www.artstation.com/artwork/ONdgg', name: 'UE4 Snowy Road', year: '2015', image: 'images/other-projects/snowyroad.png'},
+  { color: '#cccccc ', link: 'https://github.com/berkekiran/ue4-snow-system-v2', name: 'UE4 Snow System v2', year: '2015', image: 'images/other-projects/ue4-snow-system-v2.png'},
+  { color: '#cccccc ', link: 'https://github.com/berkekiran/ue4-snow-system-v1', name: 'UE4 Snow System v1', year: '2015', image: 'images/other-projects/ue4-snow-system-v1.png'},
+  { color: '#1D1F1E ', link: 'https://github.com/berkekiran/portfolio-2015-v4', name: 'Portfolio 2015 v4', year: '2015', image: 'images/other-projects/portfolio-2015-v4.png'},
+  { color: '#161616 ', link: 'https://github.com/berkekiran/portfolio-2015-v3-design', name: 'Portfolio 2015 v3 Design', year: '2015', image: 'images/other-projects/portfolio-2015-v3-design.png'},
+  { color: '#cccccc ', link: 'https://github.com/berkekiran/portfolio-2015-v2-design', name: 'Portfolio 2015 v2 Design', year: '2015', image: 'images/other-projects/portfolio-2015-v2-design.png'},
+  { color: '#f8f8f8 ', link: 'https://soundcloud.com/berkekiran/berkekiran-truth', name: 'Berke Kiran - Truth', year: '2015', image: 'images/other-projects/berkekiran-truth.png'},
+  { color: '#f8f8f8 ', link: 'https://soundcloud.com/berkekiran/berkekiran-death', name: 'Berke Kiran - Death', year: '2015', image: 'images/other-projects/berkekiran-death.png'},
+  { color: '#f8f8f8 ', link: 'https://soundcloud.com/berkekiran/adam-noise-soundtrack-v3', name: 'Adam Noise - Soundtrack v3', year: '2015', image: 'images/other-projects/adam-noise-soundtrack-v3.png'},
+  { color: '#f8f8f8 ', link: 'https://soundcloud.com/berkekiran/adam-noise-soundtrack-v2', name: 'Adam Noise - Soundtrack v2', year: '2015', image: 'images/other-projects/adam-noise-soundtrack-v2.png'},
+  { color: '#f8f8f8 ', link: 'https://soundcloud.com/berkekiran/adam-noise-soundtrack-v1', name: 'Adam Noise - Soundtrack v1', year: '2015', image: 'images/other-projects/adam-noise-soundtrack-v1.png'},
+  { color: '#f8f8f8 ', link: 'https://vimeo.com/226496501', name: 'Metal Dragon - Video', year: '2015', image: 'images/other-projects/metal-dragon.png'},
+  { color: '#f8f8f8 ', link: 'https://github.com/berkekiran/portfolio-2015', name: 'Portfolio 2015', year: '2015', image: 'images/other-projects/portfolio-2015.png'},
+  { color: '#a7aaa9 ', link: 'https://github.com/berkekiran/photo-galleries', name: 'Photo Galleries', year: '2014', image: 'images/other-projects/photo-galleries.png'},
+  { color: '#444349 ', link: 'https://github.com/berkekiran/quick-write', name: 'Quick Write', year: '2013', image: 'images/other-projects/quick-write.png'}
+];
+
+  // Social Buttons List
 
   $scope.socialLinks = [{ socialName: "linkedin", socialHref: "https://www.linkedin.com/in/berkekiran/", socialSrc : "images/social-buttons/linkedin-logo.svg"},
                         { socialName: "github", socialHref: "https://github.com/berkekiran", socialSrc : "images/social-buttons/github-logo.svg"},
@@ -144,8 +187,9 @@ app.controller("bodyController", function($scope, $timeout){
                        ];
 });
 
-//other javascript codes
-jQuery.scrollSpeed(100, 2000);
+// Other Javascript Codes
+
+
 
 /*
 var $window = $(window);

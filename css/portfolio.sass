@@ -252,7 +252,6 @@ ul
   text-align: center
 
   .head-works
-    margin-left: 80px
     font-size: 44px
     font-weight: 400
     width: 140px
@@ -261,7 +260,7 @@ ul
     padding-bottom: 5px
 
   .head-others
-    margin-top: 140px
+    margin-top: 240px
     margin-left: auto
     margin-right: auto
     font-size: 24px
@@ -271,19 +270,70 @@ ul
     margin-bottom: 36px
     padding-bottom: 5px
 
+  .more
+    margin-top: 82px
+    margin-bottom: 20px
+    margin-left: auto
+    margin-right: auto
+    width: 180px
+    height: 24px
+    border: #fff solid 2px
+    color: #fff
+    font-size: 15px
+    font-weight: 600
+    padding-top: 12px
+    padding-bottom: 9px
+    text-align: center
+    transition: 0.4s
+
+    &:hover
+      cursor: pointer
+      transition: 0.4s
+      background-color: #fff
+      color: #161616
+
+  .workcontrol
+    width: 100%
+    height: 26px
+    margin-top: -90px
+    margin-bottom: 20px
+    margin-left: auto
+    margin-right: auto
+
+  .workcontrol-buttons
+    display: inline-block
+    margin-top: 82px
+    margin-bottom: 20px
+    width: 180px
+    height: 16px
+    border: #fff solid 2px
+    color: #fff
+    font-size: 15px
+    font-weight: 600
+    padding-top: 3px
+    padding-bottom: 9px
+    text-align: center
+    transition: 0.4s
+
+    &:hover
+      cursor: pointer
+      transition: 0.4s
+      background-color: #fff
+      color: #161616
+
   .works-ul
     text-align: center
     list-style-type: none
-    height: 736px
+    height: 750px
     width: 100%
     white-space: nowrap
     display: inline-block
 
     .work
       display: inline-block
-      margin-right: 12px
-      width: 480px
-      height: 736px
+      margin-right: 220px
+      width: 1440px
+      height: 720px
       max-height: 736px
       background-color: #fff
       vertical-align: middle
@@ -294,11 +344,43 @@ ul
         filter: grayscale(0%)
         transition: 0.4s
 
-      a
-        display: block
-        width: 100%
-        height: 100%
-        text-decoration: none
+      span
+        font-size: 74px
+        font-weight: 600
+        float: left
+        margin-left: -90px
+        margin-top: 420px
+
+        span
+          font-size: 24px
+          margin-left: 60px
+          font-weight: 600
+          margin-top: 10px
+          float: left
+          color: #AAA
+
+        a
+          display: block
+          text-decoration: none
+          color: #fff
+          font-size: 18px
+          margin-top: -20px
+          margin-left: 190px
+          border: #fff solid 2px
+          transition: 0.4s
+          width: 220px
+          padding-top: 10px
+          padding-bottom: 6px
+          height: 30px
+
+          &::after
+            padding-left: 20px
+            content: ' \2192'
+
+          &:hover
+            transition: 0.4s
+            background-color: #fff
+            color: #161616
 
   .others-ul
     position: relative
@@ -349,6 +431,7 @@ ul
           font-size: 13px
           font-weight: 300
           line-height: 18px
+
 
 .footer
   width: 100%

@@ -88,31 +88,40 @@
           <br>
           If you have a <span>project</span> you'd like to <span>discuss</span>, feel free to <span>reach out</span>.
         </p>
-        <img style="float:right; margin-top:-376px; margin-right: 220px;" height="320px" src="images/profile.png"/>
       </section>
 
       <section class="works">
         <h1 class="head-works">Works</h1>
-        <div class="works-slider">
+        <div ng-controller="WorkController">
           <ul class="works-ul">
-            <li class="work" ng-repeat="work in works" ng-style="{{work.workStyle}}">
-              <a ng-href="{{work.workHref}}"></a>
+            <li class="work" ng-repeat="work in works" ng-style="{{work.style}}">
+              <span>{{work.name}}
+                <br>
+                <span>{{work.info}}</span>
+                <br>
+                <a target="_blank"ng-href="{{work.link}}">View Project</a>
+              </span>
             </li>
           </ul>
+          <div class="workcontrol">
+            <div ng-click="prev()" class="workcontrol-buttons">Previous</div>
+            <div ng-click="next()" class="workcontrol-buttons">Next</div>
+          </div>
+        </div>
           <h1 class="head-others">Others</h1>
-          <ul class="others-ul">
-            <li class="other" ng-repeat="other in others">
-              <a ng-href="{{other.link}}">
-                <img ng-style="{'background-color': '{{other.color}}' }" ng-src="{{other.image}}">
+          <ul class="others-ul" ng-controller="OtherController as cother">
+            <li class="other" ng-repeat="elem in cother.other | limitTo:cother.limit">
+              <a target="_blank"ng-href="{{elem.link}}">
+                <img ng-style="{'background-color': '{{elem.color}}' }" ng-src="{{elem.image}}">
                 <br>
-                <span> {{other.name}}
+                <span> {{elem.name}}
                   <br>
-                  <span>{{other.year}}</span>
+                  <span>{{elem.year}}</span>
                 </span>
               </a>
             </li>
+            <div ng-click="loadMore()" class="more">More</div>
           </ul>
-        </div>
       </section>
 
       <section class="footer">

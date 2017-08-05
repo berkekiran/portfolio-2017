@@ -16,7 +16,7 @@
     <!-- Androclass Tab Color -->
     <meta name="theme-color" content="#0d1114">
     <!-- External -->
-    <link type="text/css" rel="stylesheet" href="css/portfolio.css">
+    <link type="text/css" rel="stylesheet" href="css/portfolio.css"/>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-route.min.js"></script>
@@ -61,7 +61,6 @@
             </div>
         </div>
       </section>
-
       <section class="recent-work js-tilt" id="recent-work0" data-tilt>
         <h1>
           <span id="recent-work-info0">I'm a self-taught</span>
@@ -72,7 +71,6 @@
         </h1>
         <div class="explore-button" id="explore-button" ng-click="exploreclick()">Explore my Art</div>
       </section>
-
       <section class="profile">
         <div ng-click="aboutoneclick()" id="about-button" class="about-button">About</div>
         <p>
@@ -88,6 +86,11 @@
           <br>
           If you have a <span>project</span> you'd like to <span>discuss</span>, feel free to <span>reach out</span>.
         </p>
+        <div class="showreel-div">
+          <div class="showreel"></div>
+          <div class="play-button"></div>
+          <span class="play-text">Play Showreel</span>
+        </div>
       </section>
 
       <section class="works">
@@ -95,16 +98,19 @@
         <div ng-controller="WorkController">
           <ul class="works-ul">
             <li class="work" ng-repeat="work in works" ng-style="{{work.style}}">
-              <span>{{work.name}}
+              <span class="work-name">{{work.name}}</span>
+              <br>
+              <span class="work-info">{{work.info}}
                 <br>
-                <span>{{work.info}}</span>
-                <br>
-                <a target="_blank"ng-href="{{work.link}}">View Project</a>
+                <a class="work-link" target="_blank" ng-href="{{work.link}}">
+                  <span>View Project</span>
+                </a>
               </span>
             </li>
           </ul>
           <div class="workcontrol">
             <div ng-click="prev()" class="workcontrol-buttons">Previous</div>
+            <div ng-click="first()" class="workcontrol-buttons-first">F</div>
             <div ng-click="next()" class="workcontrol-buttons">Next</div>
           </div>
         </div>
@@ -141,6 +147,7 @@
 
   <script type="text/javascript" src="js/tilt.js"></script>
   <script type="text/javascript" src="js/tiltOptions.js"></script>
+  <script type="text/javascript" src="js/noframework.waypoints.min.js"></script>
   <script type="text/javascript" src="js/portfolio.js"></script>
   </body>
 

@@ -20,7 +20,7 @@ ul {
   display: none; }
 
 .wrapper {
-  width: 88vw;
+  width: 88%;
   height: auto;
   margin-left: auto;
   margin-right: auto;
@@ -33,58 +33,117 @@ ul {
   z-index: 1;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: auto; }
-
-.menu-button {
-  position: absolute;
-  width: 4vh;
-  height: 4vh;
-  top: 8vh;
-  left: 3vw;
-  transition: 0.4s; }
-  .menu-button:hover {
-    cursor: pointer; }
-    .menu-button:hover .menu-part {
-      background-color: #F44336;
-      transition: 0.4s; }
-      .menu-button:hover .menu-part:nth-child(1) {
-        animation: menu 0.4s infinite forwards alternate-reverse paused; }
-      .menu-button:hover .menu-part:nth-child(2) {
-        animation: menu 0.5s infinite forwards alternate-reverse paused; }
-      .menu-button:hover .menu-part:nth-child(3) {
-        animation: menu 0.6s infinite forwards alternate-reverse paused; }
-      .menu-button:hover .menu-part:nth-child(4) {
-        animation: menu 0.7s infinite forwards alternate-reverse paused; }
-  .menu-button .menu-part {
-    display: block;
-    width: 100vw;
-    height: 2px;
-    background-color: #ffffff;
-    margin-bottom: 0.6vh; }
-    .menu-button .menu-part:nth-child(1) {
-      animation: menu 0.4s infinite forwards alternate-reverse; }
-    .menu-button .menu-part:nth-child(2) {
-      animation: menu 0.5s infinite forwards alternate-reverse; }
-    .menu-button .menu-part:nth-child(3) {
-      animation: menu 0.6s infinite forwards alternate-reverse; }
-    .menu-button .menu-part:nth-child(4) {
-      animation: menu 0.7s infinite forwards alternate-reverse; }
-
-.section-name {
-  position: absolute;
-  z-index: 8;
-  height: 20vh;
-  top: 8vh;
-  left: 50vw;
-  transform: translateX(-50%);
-  font-size: 2vh;
-  font-weight: 400;
-  transition: 0.4s; }
-  .section-name div:first-child {
-    opacity: 1; }
-  .section-name div:last-child {
-    opacity: 0; }
+  .ui .menu-button {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 4.4vw;
+    left: 3.8vw;
+    transition: 0.4s; }
+    .ui .menu-button:hover {
+      cursor: pointer; }
+      .ui .menu-button:hover .menu-part {
+        background-color: #F44336;
+        transition: 0.4s; }
+        .ui .menu-button:hover .menu-part:nth-child(1) {
+          animation: menu 0.4s infinite forwards alternate-reverse paused; }
+        .ui .menu-button:hover .menu-part:nth-child(2) {
+          animation: menu 0.5s infinite forwards alternate-reverse paused; }
+        .ui .menu-button:hover .menu-part:nth-child(3) {
+          animation: menu 0.6s infinite forwards alternate-reverse paused; }
+        .ui .menu-button:hover .menu-part:nth-child(4) {
+          animation: menu 0.7s infinite forwards alternate-reverse paused; }
+    .ui .menu-button .menu-part {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #ffffff;
+      margin-bottom: 0.6vh; }
+      .ui .menu-button .menu-part:nth-child(1) {
+        animation: menu 0.4s infinite forwards alternate-reverse; }
+      .ui .menu-button .menu-part:nth-child(2) {
+        animation: menu 0.5s infinite forwards alternate-reverse; }
+      .ui .menu-button .menu-part:nth-child(3) {
+        animation: menu 0.6s infinite forwards alternate-reverse; }
+      .ui .menu-button .menu-part:nth-child(4) {
+        animation: menu 0.7s infinite forwards alternate-reverse; }
+  .ui .section-name {
+    position: absolute;
+    z-index: 8;
+    height: 24px;
+    top: 4.4vw;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2vh;
+    font-weight: 400;
+    transition: 0.4s; }
+    .ui .section-name div:first-child {
+      opacity: 1; }
+    .ui .section-name div:last-child {
+      opacity: 0; }
+  .ui .menu-ui {
+    position: fixed;
+    z-index: -1;
+    text-align: left;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    background-color: #fff;
+    margin-left: -800px; }
+    .ui .menu-ui div {
+      color: #000;
+      font-size: 28px;
+      font-weight: 500;
+      margin-left: 40px;
+      transition: 0.4s;
+      padding-bottom: 10px;
+      margin-bottom: -26px;
+      height: 30px; }
+      .ui .menu-ui div:hover {
+        cursor: pointer;
+        transition: 0.4s; }
+    .ui .menu-ui .menu-wrapper {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); }
+      .ui .menu-ui .menu-wrapper a {
+        text-decoration: none;
+        color: #fff; }
+      .ui .menu-ui .menu-wrapper .menu-ui-intro {
+        width: 66px;
+        border-bottom: #000 solid 2px;
+        transition: 0.4s; }
+        .ui .menu-ui .menu-wrapper .menu-ui-intro:hover {
+          width: 100px;
+          transition: 0.4s;
+          border-bottom-color: #F44336; }
+      .ui .menu-ui .menu-wrapper .menu-ui-about {
+        width: 84px;
+        border-bottom: #000 solid 2px;
+        transition: 0.4s; }
+        .ui .menu-ui .menu-wrapper .menu-ui-about:hover {
+          width: 118px;
+          transition: 0.4s;
+          border-bottom-color: #F44336; }
+      .ui .menu-ui .menu-wrapper .menu-ui-works {
+        width: 84px;
+        border-bottom: #000 solid 2px;
+        transition: 0.4s; }
+        .ui .menu-ui .menu-wrapper .menu-ui-works:hover {
+          width: 118px;
+          transition: 0.4s;
+          border-bottom-color: #F44336; }
+      .ui .menu-ui .menu-wrapper .menu-ui-contact {
+        width: 110px;
+        border-bottom: #000 solid 2px;
+        transition: 0.4s; }
+        .ui .menu-ui .menu-wrapper .menu-ui-contact:hover {
+          width: 144px;
+          transition: 0.4s;
+          border-bottom-color: #F44336; }
 
 .recent-work {
   margin-top: 20vh;
@@ -108,25 +167,23 @@ ul {
   .recent-work h1 {
     font-size: 6.4vh;
     font-weight: 700;
+    margin-left: -4vw; }
+  .recent-work .explore-button {
+    position: relative;
+    margin-top: -22px;
+    font-size: 2vh;
+    font-weight: 400;
+    width: 14vh;
+    text-align: left;
     margin-left: -4vw;
-    /* -90px */ }
-
-.explore-button {
-  position: relative;
-  margin-top: -3.2vh;
-  font-size: 2vh;
-  font-weight: 400;
-  width: 14vh;
-  text-align: left;
-  margin-left: -4vw;
-  padding-bottom: 0.6vh;
-  border-bottom: #fff solid 2px;
-  transition: 0.4s; }
-  .explore-button:hover {
-    cursor: pointer;
-    border-bottom-color: #F44336;
-    transition: 0.4s;
-    width: 18vh; }
+    padding-bottom: 6px;
+    border-bottom: #fff solid 2px;
+    transition: 0.4s; }
+    .recent-work .explore-button:hover {
+      cursor: pointer;
+      border-bottom-color: #F44336;
+      transition: 0.4s;
+      width: 154px; }
 
 .profile {
   margin-top: 6vh;
@@ -139,19 +196,19 @@ ul {
     font-size: 2vh;
     line-height: 4vh;
     color: #505050;
-    width: 40vw; }
+    width: 72vh; }
     .profile p span {
       color: #fff; }
   .profile .showreel-div {
     position: absolute;
     display: block;
-    margin-top: -560px;
-    margin-left: 400px; }
+    margin-top: -60vh;
+    margin-left: 20vw; }
     .profile .showreel-div .showreel {
       position: absolute;
       z-index: -1;
-      height: 720px;
-      width: 1280px;
+      height: 72vh;
+      width: 64vw;
       background-color: #000; }
     .profile .showreel-div .play-button {
       z-index: 1;
@@ -159,104 +216,30 @@ ul {
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      margin-left: 608px;
-      margin-top: 328px;
-      margin-bottom: 20px;
-      height: 64px;
-      width: 64px;
+      margin-left: 60vw;
+      margin-top: 3.6vh;
+      height: 4vh;
+      width: 4vh;
       transition: 0.4s; }
       .profile .showreel-div .play-button:hover {
         transition: 0.4s;
         cursor: pointer;
         background-image: url("/images/extra/play-hover.svg"); }
-    .profile .showreel-div .play-text {
-      position: relative;
-      z-index: 1;
-      margin-left: 592px;
-      height: 64px;
-      font-size: 14px;
-      font-weight: 600;
-      font-style: italic; }
-
-.about-button {
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 2vh;
-  font-weight: 400;
-  width: 6vh;
-  text-align: center;
-  padding-bottom: 0.5vh;
-  border-bottom: #fff solid 2px;
-  transition: 0.4s; }
-  .about-button:hover {
-    cursor: pointer;
-    border-bottom-color: #F44336;
-    transition: 0.4s;
-    width: 9vh; }
-
-.menu-ui {
-  position: fixed;
-  z-index: -1;
-  text-align: left;
-  top: 0;
-  left: 0;
-  width: 400px;
-  height: 100vh;
-  background-color: #fff;
-  margin-left: -800px; }
-  .menu-ui div {
-    color: #000;
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-left: 40px;
-    transition: 0.4s;
-    padding-bottom: 10px;
-    margin-bottom: -26px;
-    height: 30px; }
-    .menu-ui div:hover {
+  .profile .about-button {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2vh;
+    font-weight: 400;
+    width: 6vh;
+    text-align: center;
+    padding-bottom: 0.5vh;
+    border-bottom: #fff solid 2px;
+    transition: 0.4s; }
+    .profile .about-button:hover {
       cursor: pointer;
       border-bottom-color: #F44336;
-      transition: 0.4s; }
-
-.menu-wrapper {
-  position: absolute;
-  top: 50vh;
-  transform: translateY(-50%); }
-  .menu-wrapper a {
-    text-decoration: none;
-    color: #fff; }
-
-.menu-ui-intro {
-  width: 66px;
-  border-bottom: #000 solid 2px;
-  transition: 0.4s; }
-  .menu-ui-intro:hover {
-    width: 100px;
-    transition: 0.4s; }
-
-.menu-ui-about {
-  width: 84px;
-  border-bottom: #000 solid 2px;
-  transition: 0.4s; }
-  .menu-ui-about:hover {
-    width: 118px;
-    transition: 0.4s; }
-
-.menu-ui-works {
-  width: 84px;
-  border-bottom: #000 solid 2px;
-  transition: 0.4s; }
-  .menu-ui-works:hover {
-    width: 118px;
-    transition: 0.4s; }
-
-.menu-ui-contact {
-  width: 110px;
-  border-bottom: #000 solid 2px;
-  transition: 0.4s; }
-  .menu-ui-contact:hover {
-    width: 144px;
-    transition: 0.4s; }
+      transition: 0.4s;
+      width: 9vh; }
 
 .works {
   margin-left: auto;
@@ -481,6 +464,8 @@ ul {
       display: inline-block;
       margin-right: 14px;
       transition: 0.4s; }
+      .footer .social li:last-child {
+        margin-right: 0px; }
       .footer .social li img {
         height: 20px;
         width: 20px; }
@@ -532,5 +517,51 @@ ul {
     opacity: 0.2; }
   100% {
     opacity: 0; } }
+@media only screen and (max-width: 800px) {
+  .recent-work {
+    height: 36vh;
+    padding-top: 28vh; }
+    .recent-work h1 {
+      font-size: 6.4vw; }
+    .recent-work .explore-button {
+      font-size: 1.8vh;
+      width: 13vh;
+      margin-top: -12px; }
+      .recent-work .explore-button:hover {
+        width: 134px; }
+
+  .profile {
+    margin-bottom: 34vh; }
+    .profile p {
+      margin-top: 34vh;
+      font-size: 1.8vh;
+      line-height: 3vh;
+      width: 100%; }
+    .profile .showreel-div {
+      position: relative;
+      height: 42vh;
+      width: 100%;
+      margin-top: 5vh;
+      margin-left: 0; }
+      .profile .showreel-div .showreel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: #000; }
+      .profile .showreel-div .play-button {
+        z-index: 1;
+        margin-left: 70vw;
+        margin-top: -38vh;
+        height: 4vh;
+        width: 4vh; }
+
+  .footer .letstalk {
+    font-size: 2vh; }
+  .footer .social li img {
+    height: 16px;
+    width: 16px; }
+  .footer .year {
+    font-size: 11px;
+    margin-top: 72px; } }
 
 /*# sourceMappingURL=portfolio.css.map */

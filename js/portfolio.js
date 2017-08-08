@@ -92,17 +92,7 @@ app.controller("bodyController", function($scope, $timeout){
   // Page Scroll Speed Controller
 
   jQuery.scrollSpeed(100, 2000);
- /*
-  // Animation Waypoints
 
-  var waypoint = new Waypoint({
-    element: document.getElementById(''),
-    handler: function() {
-
-    },
-    offset: 400
-  });
-*/
   // Menu Buttons Animations and Redirect Process
 
   $scope.aboutoneclick = function(){
@@ -223,6 +213,8 @@ app.controller("bodyController", function($scope, $timeout){
 
 
 // Other Javascript Codes
+
+
 
 /*
 var $window = $(window);

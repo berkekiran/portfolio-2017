@@ -36,7 +36,7 @@
 
   <body ng-controller="bodyController">
 
-    <section class="wrapper">
+    <section id="wrapper" class="wrapper">
 
       <section class="ui">
         <div class="menu-button" ng-click="menuclick()">
@@ -75,7 +75,7 @@
         <div class="explore-button" id="explore-button" ng-click="exploreclick()">Explore my Art</div>
       </section>
 
-      <section class="profile">
+      <section id="about" class="profile">
         <div ng-click="aboutoneclick()" id="about-button" class="about-button">About</div>
         <p>
           <span id="about">Hello!</span> I’m <span>Berke Kiran</span> a self-taught <span>3D Character Artist</span> and <span>Front-End Developer</span>.
@@ -96,7 +96,7 @@
         </div>
       </section>
 
-      <section class="works">
+      <section id="works" class="works">
         <h1 class="head-works">Works</h1>
         <div ng-controller="WorkController">
           <ul class="works-ul">
@@ -117,7 +117,8 @@
             <div ng-click="next()" class="workcontrol-buttons">Next</div>
           </div>
         </div>
-          <h1 class="head-others">Others</h1>
+          <div class="head-others-div"><h1 class="head-others">Others</h1></div>
+        <div class="others-div">
           <ul class="others-ul" ng-controller="OtherController as cother">
             <li class="other" ng-repeat="elem in cother.other | limitTo:cother.limit">
               <a target="_blank"ng-href="{{elem.link}}">
@@ -129,8 +130,9 @@
                 </span>
               </a>
             </li>
-            <div ng-click="loadMore()" class="more">More</div>
+            <div class="more-div"><div ng-click="loadMore()" class="more">More</div></div>
           </ul>
+        </div>
       </section>
 
       <section class="footer">
@@ -150,7 +152,6 @@
 
   <script type="text/javascript" src="js/tilt.js"></script>
   <script type="text/javascript" src="js/tiltOptions.js"></script>
-  <script type="text/javascript" src="js/noframework.waypoints.min.js"></script>
   <script type="text/javascript" src="js/portfolio.js"></script>
   </body>
 

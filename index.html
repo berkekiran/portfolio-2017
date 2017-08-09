@@ -36,7 +36,7 @@
 
   <body ng-controller="bodyController">
 
-    <section id="wrapper" class="wrapper">
+    <section class="wrapper">
 
       <section class="ui">
         <div class="menu-button" ng-click="menuclick()">
@@ -46,8 +46,8 @@
           <span class="menu-part" ng-style="menuButtonstyle"></span>
         </div>
         <span class="section-name">
-          <div id="section-name0">Berke <b>Kiran</b></div>
-          <div id="section-name1">About</b></div>
+          <div class="section-name0">Berke <b>Kiran</b></div>
+          <div class="section-name1">About</b></div>
         </span>
         <div class="menu-ui" ng-style="menustyle">
           <div class="menu-wrapper">
@@ -64,20 +64,25 @@
         </div>
       </section>
 
-      <section class="recent-work js-tilt" id="recent-work0" data-tilt>
+      <div class="resume">
+        <hr/>
+        <span>RESUME</span>
+      </div>
+
+      <section class="recent-work">
         <h1>
-          <span id="recent-work-info0">I'm a self-taught</span>
+          <span>I'm a self-taught</span>
           <br>
-          <span id="recent-work-info1">3D Character Artist &</span>
+          <span>3D Character Artist &</span>
           <br>
-          <span id="recent-work-info2">Front-End Developer.</span>
+          <span>Front-End Developer.</span>
         </h1>
-        <div class="explore-button" id="explore-button" ng-click="exploreclick()">Explore my Art</div>
+        <div class="explore-button" ng-click="exploreclick()">Explore my Art</div>
       </section>
 
-      <section id="about" class="profile">
-        <div ng-click="aboutoneclick()" id="about-button" class="about-button">About</div>
-        <p>
+      <section class="profile">
+        <div ng-click="aboutoneclick()" class="about-button">About</div>
+        <p class="about-text">
           <span id="about">Hello!</span> I’m <span>Berke Kiran</span> a self-taught <span>3D Character Artist</span> and <span>Front-End Developer</span>.
           I am specialized in creating <span>3D characters</span> for <span>cinematics</span>, <span>feature film</span>, and <span>games</span>.
           I love <span>art</span>, <span>science</span>, <span>coding</span>, <span>learning</span> new technologies & <span>improving myself</span>. I was
@@ -96,7 +101,7 @@
         </div>
       </section>
 
-      <section id="works" class="works">
+      <section class="works">
         <h1 class="head-works">Works</h1>
         <div ng-controller="WorkController">
           <ul class="works-ul">
@@ -150,9 +155,7 @@
 
     </section>
 
-  <script type="text/javascript" src="js/tilt.js"></script>
-  <script type="text/javascript" src="js/tiltOptions.js"></script>
-  <script type="text/javascript" src="js/portfolio.js"></script>
+<script type="text/javascript" src="js/portfolio.js"></script>
   </body>
 
 </html>

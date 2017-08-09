@@ -44,6 +44,7 @@ app.controller('WorkController', function($scope) {
 });
 
 // Load More Other Projects
+
 app.controller('OtherController', function($scope) {
 
   var vm = this;
@@ -95,15 +96,18 @@ app.controller("bodyController", function($scope, $timeout){
 
   // Menu Buttons Animations and Redirect Process
 
+  var aboutTextY = $('.about-text').offset().top-120;
+  var worksY = $('.works').offset().top;
+
   $scope.aboutoneclick = function(){
     $('html, body').animate({
- 	        scrollTop: 1200
+ 	        scrollTop: aboutTextY
  	    }, 1400);
   }
 
   $scope.aboutclick = function(){
     $('html, body').animate({
- 	        scrollTop: 1200
+ 	        scrollTop: aboutTextY
  	    }, 1400);
       $scope.menustyle = {
         "animation" : "menu-ui-off 0.6s linear forwards",
@@ -129,7 +133,7 @@ app.controller("bodyController", function($scope, $timeout){
 
   $scope.worksclick = function(){
     $('html, body').animate({
- 	        scrollTop: 2480
+ 	        scrollTop: worksY
  	    }, 1400);
     $scope.menustyle = {
       "animation" : "menu-ui-off 0.6s linear forwards",
@@ -142,7 +146,7 @@ app.controller("bodyController", function($scope, $timeout){
 
   $scope.exploreclick = function(){
     $('html, body').animate({
- 	        scrollTop: 2480
+ 	        scrollTop: worksY
  	    }, 1400);
   }
 
@@ -209,63 +213,28 @@ app.controller("bodyController", function($scope, $timeout){
                         { socialName: "instagram", socialHref: "https://www.instagram.com/berkekiran.official/", socialSrc : "images/social-buttons/instagram-logo.svg"},
                         { socialName: "facebook", socialHref: "https://www.facebook.com/xBerkeKiranx", socialSrc : "images/social-buttons/facebook-logo.svg"}
                        ];
-  });
-
+});
 
 // Other Javascript Codes
 
+  // Page Animations
 
-
-/*
-var $window = $(window);
-$window.on("mousewheel DOMMouseScroll", onMouseWheel);
-function onMouseWheel(e) {
-    e.preventDefault();
-}
+/*  setTimeout(function(){
+    $('.wrapper').addClass('load');
+  }, 200);
 */
-//scroll animations
-/*
-var sectionName0 = document.getElementById('section-name0');
-var sectionName1 = document.getElementById('section-name1');
-var aboutButton = document.getElementById('about-button');
-var recentWorkInfo0 = document.getElementById('recent-work-info0');
-var recentWorkInfo1 = document.getElementById('recent-work-info1');
-var recentWorkInfo2 = document.getElementById('recent-work-info2');
-var exploreButton = document.getElementById('explore-button');
-var recentWork = document.getElementById('recent-work0');
+  window.addEventListener("scroll", function(){
+    var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
-window.addEventListener("scroll", function(){
-  var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
-}, true);
+    var aboutButton = $('.about-button').offset().top-100;
+    var works = $('.works').offset().top-100;
 
-if(scrollTop >= 160){
-  recentWorkInfo0.style.animation = "intro-info-off 0.85s linear forwards";
-  recentWorkInfo1.style.animation = "intro-info-off 1.15s linear forwards";
-  recentWorkInfo2.style.animation = "intro-info-off 1.35s linear forwards";
-  exploreButton.style.animation = "opacity-off 1.15s linear forwards";
-  aboutButton.style.animation = "opacity-off 0.35s linear forwards";
-  if(scrollTop >= 700){
-    if(scrollTop < 2200){
-      sectionName1.style.animation = "section-name 0.35s linear forwards";
-      sectionName0.style.animation = "section-name-off 0.35s linear forwards";
-      recentWork.style.animation = "opacity-off 1.45s linear forwards";
-      sectionName1.style.animation = "section-name 0.35s linear forwards";
-      sectionName0.style.animation = "section-name-off 0.35s linear forwards";
-      recentWork.style.animation = "opacity-off 1.85s linear forwards";
-    } else if(scrollTop > 2200){
-      sectionName1.style.animation = "section-name-off 0.35s linear forwards";
-      sectionName0.style.animation = "section-name 0.35s linear forwards";
+    if(scrollTop > aboutButton && scrollTop < works) {
+      $('.section-name0').removeClass('unload').addClass('load');
+      $('.section-name1').removeClass('unload').addClass('load');
+    } else  {
+      $('.section-name0').removeClass('load').addClass('unload');
+      $('.section-name1').removeClass('load').addClass('unload');
     }
-  } else if(scrollTop < 700){
-    sectionName1.style.animation = "section-name-off 0.35s linear forwards";
-    sectionName0.style.animation = "section-name 0.35s linear forwards";
-    recentWork.style.animation = "opacity 1.45s linear forwards";
-  }
-}else if(scrollTop <= 160){
-   recentWorkInfo0.style.animation = "intro-info 0.85s linear forwards";
-   recentWorkInfo1.style.animation = "intro-info 1.15s linear forwards";
-   recentWorkInfo2.style.animation = "intro-info 1.35s linear forwards";
-   exploreButton.style.animation = "opacity 1.15s linear forwards";
-   aboutButton.style.animation = "opacity 0.35s linear forwards";
-}
-*/
+
+  }, true);

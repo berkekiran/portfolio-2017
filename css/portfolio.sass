@@ -3,12 +3,13 @@ body
   padding: 0
   background: #161616
   color: #fff
-  font-family: 'Open Sans', sans-serif
   overflow: hidden
+  font-family: 'Open Sans', sans-serif
   -webkit-user-select: none
   -moz-user-select: none
   -ms-user-select: none
   user-select: none
+  -webkit-font-smoothing: antialiased
 
   &:hover
     cursor: default
@@ -27,6 +28,11 @@ ul
   top: 0
   left: 0
   right: 0
+  opacity: 1
+  transition: all 3.4s ease-out
+
+  &.load
+    opacity: 1
 
 .ui
   position: fixed
@@ -85,11 +91,31 @@ ul
     transform: translateX(-50%)
     font-size: 2vh
     font-weight: 400
-    transition: 0.4s
     text-align: center
 
-    div:first-child
+    .section-name0
+      transition: all 0.4s
       opacity: 1
+
+      &.load
+        transform: translateY(-30px)
+        opacity: 0
+
+      &.unload
+        transform: translateY(0px)
+        opacity: 1
+
+    .section-name1
+      transition: all 0.4s
+      opacity: 0
+
+      &.load
+        transform: translateY(-30px)
+        opacity: 1
+
+      &.unload
+        transform: translateY(0px)
+        opacity: 0
 
     div:last-child
       opacity: 0
@@ -167,6 +193,34 @@ ul
           width: 144px
           transition: 0.4s
           border-bottom-color: #F44336
+
+.resume
+  position: fixed
+  z-index: 8
+  bottom: 56px
+  right: -26px
+  transform: rotate(-90deg)
+  display: inline-block
+
+  span
+    float: right
+    font-size: 1.5vh
+    font-weight: 400
+    transition: 0.4s
+    letter-spacing: 2px
+    margin-left: 20px
+
+    &:hover
+      transition: 0.4s
+      cursor: pointer
+      opacity: 0.4
+
+  hr
+    float: left
+    border: 0
+    background-color: #fff
+    width: 60px
+    height: 2px
 
 .recent-work
   margin-top: 20vh

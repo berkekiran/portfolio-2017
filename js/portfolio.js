@@ -96,18 +96,18 @@ app.controller("bodyController", function($scope, $timeout){
 
   // Menu Buttons Animations and Redirect Process
 
-  var aboutTextY = $('.about-text').offset().top-120;
+  var waypointAbout = $('.waypoint-about').offset().top;
   var worksY = $('.works').offset().top;
 
   $scope.aboutoneclick = function(){
     $('html, body').animate({
- 	        scrollTop: aboutTextY
+ 	        scrollTop: waypointAbout
  	    }, 1400);
   }
 
   $scope.aboutclick = function(){
     $('html, body').animate({
- 	        scrollTop: aboutTextY
+ 	        scrollTop: waypointAbout
  	    }, 1400);
       $scope.menustyle = {
         "animation" : "menu-ui-off 0.6s linear forwards",
@@ -219,22 +219,113 @@ app.controller("bodyController", function($scope, $timeout){
 
   // Page Animations
 
-/*  setTimeout(function(){
-    $('.wrapper').addClass('load');
-  }, 200);
-*/
-  window.addEventListener("scroll", function(){
-    var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    // Onload Animations
 
-    var aboutButton = $('.about-button').offset().top-100;
-    var works = $('.works').offset().top-100;
-
-    if(scrollTop > aboutButton && scrollTop < works) {
-      $('.section-name0').removeClass('unload').addClass('load');
-      $('.section-name1').removeClass('unload').addClass('load');
-    } else  {
-      $('.section-name0').removeClass('load').addClass('unload');
-      $('.section-name1').removeClass('load').addClass('unload');
+    window.onload = function(){
+      var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+      $('html, body').animate({
+            scrollTop: 0
+        }, 1400);
+      $('.wrapper').addClass('load');
+      $('.recent-work').addClass('move-down');
+      $('.recent-work-text').addClass('load-down');
+      $('.recent-work-text1').addClass('load-down');
+      $('.recent-work-text2').addClass('load-down');
+      $('.explore-button').addClass('load');
+      $('.section-name0').addClass('unload');
+      $('.about-button').addClass('fade-in');
+      $('.resume').addClass('load');
     }
 
-  }, true);
+    // Scroll Based Animations
+
+    window.addEventListener("scroll", function(){
+      var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+      var aboutButton = $('.about-button').offset().top-100;
+      var works = $('.works').offset().top-100;
+      var recentWork = $('.recent-work').offset().top;
+      var wrapper = $('.wrapper').offset().top;
+      var recentWorkText = $('.recent-work-text').offset().top-100;
+      var waypointAbout = $('.waypoint-about').offset().top-100;
+      var workLink = $('.work-link').offset().top;
+
+      if(scrollTop > recentWorkText) {
+        $('.about-button').removeClass('fade-in').addClass('fade-out');
+        $('.recent-work').removeClass('move-down').addClass('move-up');
+        $('.recent-work-text').removeClass('load-down').addClass('load-up');
+        $('.recent-work-text1').removeClass('load-down').addClass('load-up');
+        $('.recent-work-text2').removeClass('load-down').addClass('load-up');
+        $('.explore-button').removeClass('load').addClass('unload');
+        $('.section-name0').removeClass('unload').addClass('load');
+        $('.section-name1').removeClass('unload').addClass('load');
+      } else if(scrollTop < recentWorkText) {
+        $('.about-button').removeClass('fade-out').addClass('fade-in');
+      }
+
+      if(scrollTop <= wrapper+100) {
+        $('.recent-work').removeClass('move-up').addClass('move-down');
+        $('.recent-work-text').removeClass('load-up').addClass('load-down');
+        $('.recent-work-text1').removeClass('load-up').addClass('load-down');
+        $('.recent-work-text2').removeClass('load-up').addClass('load-down');
+        $('.explore-button').removeClass('unload').addClass('load');
+        $('.section-name0').removeClass('load').addClass('unload');
+        $('.section-name1').removeClass('load').addClass('unload');
+      }
+
+      if(scrollTop > waypointAbout) {
+        $('.about-text').removeClass('close').addClass('open');
+        $('.showreel').removeClass('close').addClass('open');
+        $('.play-button').removeClass('close').addClass('open');
+      } else if(scrollTop < waypointAbout) {
+        $('.about-text').removeClass('open').addClass('close');
+        $('.showreel').removeClass('open').addClass('close');
+        $('.play-button').removeClass('open').addClass('close');
+      }
+
+      if(scrollTop >= works) {
+        $('.section-name0').removeClass('load').addClass('unload');
+        $('.section-name1').removeClass('load').addClass('unload');
+        $('.head-works').removeClass('unload').addClass('load');
+        $('.works-ul').removeClass('unload').addClass('load');
+        $('.work-name').removeClass('load-up').addClass('load-down');
+        $('.work-info').removeClass('load-up').addClass('load-down');
+        $('.work-link').removeClass('load-up').addClass('load-down');
+      } else if(scrollTop < works){
+        $('.head-works').removeClass('load').addClass('unload');
+        $('.works-ul').removeClass('load').addClass('unload');
+        $('.work-name').removeClass('load-down').addClass('load-up');
+        $('.work-info').removeClass('load-down').addClass('load-up');
+        $('.work-link').removeClass('load-down').addClass('load-up');
+      }
+
+      var i;
+      var otherLength = $('.other').length;
+
+      if(scrollTop >= workLink) {
+        $('.head-others').removeClass('unload').addClass('load');
+        for(i= 0; i<= otherLength; i++) {
+          $('.other').each(function(i){
+            if(i < 6){
+              setTimeout(function(){
+                $('.other').eq(i).removeClass('is-not-visible').addClass('is-visible');
+              }, 100 * i);
+            } else if(i >= 6){
+              setTimeout(function(){
+                $('.other').eq(i).removeClass('is-not-visible').addClass('is-visible');
+              }, 100 * (i-5));
+            }
+          });
+        }
+      } else if(scrollTop < workLink){
+        $('.head-others').removeClass('load').addClass('unload');
+        for(i= 0; i<= otherLength; i++) {
+          $('.other').each(function(i){
+              setTimeout(function(){
+                $('.other').eq(i).removeClass('is-visible').addClass('is-not-visible');
+              }, 100 * i);
+          });
+        }
+      }
+
+    }, true);

@@ -15,31 +15,31 @@ app.controller('WorkController', function($scope) {
                   {name: "The God", info: "2016 / Digital Artwork", link: "https://www.artstation.com/artwork/Nm8g5", style : { "background-image" : "url('https://cdna.artstation.com/p/assets/images/images/006/805/672/large/berke-kiran-thegod.jpg?1501398937')", "background-size" : "cover", "background-position" : "center", "background-repeat" : "no-repeat" } },
                  ];
 
-  var move = 0,
-      numOfSlides = $scope.works.length-1,
-      count = 0;
+   var move = 0,
+         numOfSlides = $scope.works.length-1,
+         count = 0;
 
-  $scope.next = function() {
-    if(count < numOfSlides) {
-      if(count == 0) move -= 3320;
-      if(count >= 1) move -= 3320;
-      $('.works-ul').animate({"margin-left": move},1200);
-      count++;
-    }
-  };
+     $scope.next = function() {
+       if(count < numOfSlides) {
+         if(count == 0) move -= 584;
+         if(count >= 1) move -= 584;
+         $('.works-ul').css("margin-left", move);
+         count++;
+       }
+     };
 
-  $scope.first = function() {
-    move = 0;
-    $('.works-ul').animate({"margin-left": move},1200);
-    count = 0;
-  };
+     $scope.first = function() {
+       move = 0;
+       $('.works-ul').css("margin-left", move);
+       count = 0;
+     };
 
-  $scope.prev = function() {
-    if(count == 0) move = 0;
-    if(count == 1) {move += 3320; count--;}
-    if(count >= 2) {move += 3320; count--;}
-    $('.works-ul').animate({"margin-left": move},1200);
-  };
+     $scope.prev = function() {
+       if(count == 0) move = 0;
+       if(count == 1) {move += 584; count--;}
+       if(count >= 2) {move += 584; count--;}
+       $('.works-ul').css("margin-left", move);
+     };
 
 });
 
@@ -56,7 +56,9 @@ app.controller('OtherController', function($scope) {
     vm.limit = increamented > vm.other.length ? vm.other.length : increamented;
 
     if(increamented >= vm.other.length){
-      $('.more').hide();
+      $('.more').css("opacity","0");
+      $('.more').css("cursor","default");
+      $('.more').css("margin-top","-5vh");
     }
   };
 
@@ -97,7 +99,7 @@ app.controller("bodyController", function($scope, $timeout){
   // Menu Buttons Animations and Redirect Process
 
   var waypointAbout = $('.waypoint-about').offset().top;
-  var worksY = $('.works').offset().top;
+  var worksY = $('.works').offset().top-50;
 
   $scope.aboutoneclick = function(){
     $('html, body').animate({
@@ -243,12 +245,17 @@ app.controller("bodyController", function($scope, $timeout){
       var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
       var aboutButton = $('.about-button').offset().top-100;
-      var works = $('.works').offset().top-100;
+      var works = $('.works').offset().top-150;
       var recentWork = $('.recent-work').offset().top;
       var wrapper = $('.wrapper').offset().top;
       var recentWorkText = $('.recent-work-text').offset().top-100;
       var waypointAbout = $('.waypoint-about').offset().top-100;
-      var workLink = $('.work-link').offset().top;
+      var workName = $('.work-name').offset().top;
+      var more = $('.more').offset().top;
+      var i;
+      var otherLength = $('.other').length;
+      var socialLength = $('.social-li').length;
+
 
       if(scrollTop > recentWorkText) {
         $('.about-button').removeClass('fade-in').addClass('fade-out');
@@ -288,21 +295,25 @@ app.controller("bodyController", function($scope, $timeout){
         $('.section-name1').removeClass('load').addClass('unload');
         $('.head-works').removeClass('unload').addClass('load');
         $('.works-ul').removeClass('unload').addClass('load');
-        $('.work-name').removeClass('load-up').addClass('load-down');
-        $('.work-info').removeClass('load-up').addClass('load-down');
-        $('.work-link').removeClass('load-up').addClass('load-down');
+        setTimeout(function(){
+          $('.work-name').removeClass('load-up').addClass('load-down');
+          $('.work-info').removeClass('load-up').addClass('load-down');
+          $('.work-link').removeClass('load-up').addClass('load-down');
+          $('.workcontrol').removeClass('unload').addClass('load');
+        }, 800);
       } else if(scrollTop < works){
         $('.head-works').removeClass('load').addClass('unload');
         $('.works-ul').removeClass('load').addClass('unload');
-        $('.work-name').removeClass('load-down').addClass('load-up');
-        $('.work-info').removeClass('load-down').addClass('load-up');
-        $('.work-link').removeClass('load-down').addClass('load-up');
+        setTimeout(function(){
+          $('.work-name').removeClass('load-down').addClass('load-up');
+          $('.work-info').removeClass('load-down').addClass('load-up');
+          $('.work-link').removeClass('load-down').addClass('load-up');
+          $('.work-link').removeClass('load-down').addClass('load-up');
+          $('.workcontrol').removeClass('load').addClass('unload');
+        }, 800);
       }
 
-      var i;
-      var otherLength = $('.other').length;
-
-      if(scrollTop >= workLink) {
+      if(scrollTop >= workName) {
         $('.head-others').removeClass('unload').addClass('load');
         for(i= 0; i<= otherLength; i++) {
           $('.other').each(function(i){
@@ -317,7 +328,7 @@ app.controller("bodyController", function($scope, $timeout){
             }
           });
         }
-      } else if(scrollTop < workLink){
+      } else if(scrollTop < workName){
         $('.head-others').removeClass('load').addClass('unload');
         for(i= 0; i<= otherLength; i++) {
           $('.other').each(function(i){
@@ -326,6 +337,31 @@ app.controller("bodyController", function($scope, $timeout){
               }, 100 * i);
           });
         }
+      }
+
+      if(scrollTop >= (more-400)) {
+        $('.letstalk').removeClass('close').addClass('open');
+        $('.line').removeClass('close').addClass('open');
+        $('.year').removeClass('close').addClass('open');
+        for(i= 0; i<= socialLength; i++) {
+          $('.social-li').each(function(i){
+              setTimeout(function(){
+                $('.social-li').eq(i).removeClass('close').addClass('open');
+              }, 100 * i);
+          });
+        }
+      } else if(scrollTop < (more-400)){
+        $('.letstalk').removeClass('open').addClass('close');
+        $('.line').removeClass('open').addClass('close');
+        $('.year').removeClass('open').addClass('close');
+        for(i= 0; i<= socialLength; i++) {
+          $('.social-li').each(function(i){
+              setTimeout(function(){
+                $('.social-li').eq(i).removeClass('open').addClass('close');
+              }, 100 * i);
+          });
+        }
+
       }
 
     }, true);

@@ -105,6 +105,10 @@
       <section class="works">
         <h1 class="head-works">Works</h1>
         <div ng-controller="WorkController">
+          <div class="workcontrol">
+            <div ng-click="prev()" class="workcontrol-buttons">Previous</div>
+            <div ng-click="next()" class="workcontrol-buttons">Next</div>
+          </div>
           <ul class="works-ul">
             <li class="work" ng-repeat="work in works" ng-style="{{work.style}}">
               <span class="work-name">{{work.name}}</span>
@@ -117,13 +121,8 @@
               </span>
             </li>
           </ul>
-          <div class="workcontrol">
-            <div ng-click="prev()" class="workcontrol-buttons">Previous</div>
-            <div ng-click="first()" class="workcontrol-buttons-first">F</div>
-            <div ng-click="next()" class="workcontrol-buttons">Next</div>
-          </div>
         </div>
-          <div class="head-others-div"><h1 class="head-others">Others</h1></div>
+        <div class="head-others-div"><h1 class="head-others">Others</h1></div>
         <div class="others-div">
           <ul class="others-ul" ng-controller="OtherController as cother">
             <li class="other" ng-repeat="elem in cother.other | limitTo:cother.limit">
@@ -136,16 +135,16 @@
                 </span>
               </a>
             </li>
-            <div class="more-div"><div ng-click="loadMore()" class="more">More</div></div>
+            <div class="more-div"><div ng-click="loadMore()" class="more">Load More</div></div>
           </ul>
         </div>
       </section>
 
       <section class="footer">
-        <hr/>
+        <hr class="line"/>
         <span class="letstalk">Sounds Interesting?  <a href="mailto:berkekiranofficial@hotmail.com?Subject=Hi Berke">Let's Talk!</a></span>
         <ul class="social">
-          <li ng-repeat="socialLink in socialLinks">
+          <li class="social-li" ng-repeat="socialLink in socialLinks">
             <a target="_blank" ng-href="{{socialLink.socialHref}}">
               <img ng-src="{{socialLink.socialSrc}}">
             </a>
@@ -156,7 +155,7 @@
 
     </section>
 
-    <script type="text/javascript" src="js/portfolio.js"></script>
+<script type="text/javascript" src="js/portfolio.js"></script>
   </body>
 
 </html>

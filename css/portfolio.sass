@@ -207,7 +207,7 @@ ul
   &.load
     bottom: 56px
     opacity: 1
-    transition: all 1.2s linear
+    transition: all 1.2s ease
     transition-timing-function: cubic-bezier(.42, 0, .58, 1)
 
   span
@@ -254,13 +254,13 @@ ul
     transition: 0.4s
 
   &.move-up
-    transition: all 1.2s linear
+    transition: all 1.2s ease
     transition-timing-function: cubic-bezier(.42, 0, .58, 1)
     transform: translateY(-22vh)
     opacity: 0
 
   &.move-down
-    transition: all 1.2s linear
+    transition: all 1.2s ease
     transition-timing-function: cubic-bezier(.42, 0, .58, 1)
     transform: translateY(0)
     opacity: 1
@@ -275,13 +275,13 @@ ul
     opacity: 0
 
     &.load-up
-      transition: all 1s linear
+      transition: all 1s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       margin-left: -12vw
       opacity: 0
 
     &.load-down
-      transition: all 1s linear
+      transition: all 1s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       margin-left: -4vw
       opacity: 1
@@ -292,13 +292,13 @@ ul
     opacity: 0
 
     &.load-up
-      transition: all 0.8s linear
+      transition: all 0.8s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       margin-left: -12vw
       opacity: 0
 
     &.load-down
-      transition: all 0.8s linear
+      transition: all 0.8s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       margin-left: -4vw
       opacity: 1
@@ -309,13 +309,13 @@ ul
     opacity: 0
 
     &.load-up
-      transition: all 0.6s linear
+      transition: all 0.6s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       margin-left: -12vw
       opacity: 0
 
     &.load-down
-      transition: all 0.6s linear
+      transition: all 0.6s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       margin-left: -4vw
       opacity: 1
@@ -341,7 +341,7 @@ ul
       width: 154px
 
     &.unload
-      transition: all 1s linear
+      transition: all 1s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       border-bottom: rgba(255, 255, 255, 0) solid 2px
       opacity: 0
@@ -375,13 +375,13 @@ ul
     opacity: 0
 
     &.open
-      transition: all 1.1s linear
+      transition: all 1.1s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       transform: translateY(0)
       opacity: 1
 
     &.close
-      transition: all 1.1s linear
+      transition: all 1.1s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       transform: translateY(10vh)
       opacity: 0
@@ -404,12 +404,12 @@ ul
       opacity: 0
 
       &.open
-        transition: all 1.4s linear
+        transition: all 1.4s ease
         transition-timing-function: cubic-bezier(.42, 0, .58, 1)
         opacity: 1
 
       &.close
-        transition: all 1.4s linear
+        transition: all 1.4s ease
         transition-timing-function: cubic-bezier(.42, 0, .58, 1)
         opacity: 0
 
@@ -463,7 +463,7 @@ ul
       opacity: 1
 
     &.fade-out
-      transition: all 1s linear
+      transition: all 1s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       border-bottom: rgba(255, 255, 255, 0) solid 2px
       opacity: 0
@@ -486,13 +486,13 @@ ul
     opacity: 0
 
     &.unload
-      transition: all 1s linear
+      transition: all 1s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       border-bottom: rgba(255, 255, 255, 0) solid 2px
       opacity: 0
 
     &.load
-      transition: all 1s linear
+      transition: all 1s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       opacity: 1
 
@@ -500,7 +500,7 @@ ul
     margin-left: 0px
 
     .head-others
-      margin-top: 32vh
+      margin-top: 82vh
       margin-left: auto
       margin-right: auto
       font-size: 3vh
@@ -512,15 +512,59 @@ ul
       opacity: 0
 
       &.unload
-        transition: all 1s linear
+        transition: all 1s ease
         transition-timing-function: cubic-bezier(.42, 0, .58, 1)
         border-bottom: rgba(255, 255, 255, 0) solid 2px
         opacity: 0
 
       &.load
-        transition: all 1s linear
+        transition: all 1s ease
         transition-timing-function: cubic-bezier(.42, 0, .58, 1)
         opacity: 1
+
+  .workcontrol
+    position: absolute
+    z-index: 4
+    right: 3vw
+    height: 26px
+    margin-top: -8vh
+    margin-bottom: 10vh
+    margin-left: auto
+    margin-right: auto
+    opacity: 0
+
+    &.unload
+      transition: all 0.6s ease
+      transition-timing-function: cubic-bezier(.42, 0, .58, 1)
+      border-bottom: rgba(255, 255, 255, 0) solid 2px
+      opacity: 0
+
+    &.load
+      transition: all 0.8s ease
+      transition-timing-function: cubic-bezier(.42, 0, .58, 1)
+      opacity: 1
+
+  .workcontrol-buttons
+    display: inline-block
+    margin-bottom: 20px
+    width: 180px
+    height: 16px
+    border: #fff solid 2px
+    color: #161616
+    font-size: 15px
+    font-weight: 600
+    padding-top: 3px
+    padding-bottom: 9px
+    text-align: center
+    transition: 0.4s
+    background-color: #fff
+
+    &:hover
+      cursor: pointer
+      transition: 0.4s
+      background-color: #F44336
+      border-color: #F44336
+      color: #fff
 
   .more-div
     margin-left: 50px
@@ -533,6 +577,7 @@ ul
       width: 180px
       height: 24px
       border: #fff solid 2px
+      border-radius: 32px
       color: #fff
       font-size: 15px
       font-weight: 600
@@ -544,59 +589,17 @@ ul
       &:hover
         cursor: pointer
         transition: 0.4s
+        transform: scale(1.06)
+        color: #fff
+
+      &:active
+        transition: 0.4s
+        transform: scale(1)
         background-color: #fff
         color: #161616
 
-  .workcontrol
-    width: 100%
-    height: 26px
-    margin-top: -11vh
-    margin-bottom: 10vh
-    margin-left: auto
-    margin-right: auto
-
-  .workcontrol-buttons
-    display: inline-block
-    margin-bottom: 20px
-    width: 180px
-    height: 16px
-    border: #fff solid 2px
-    color: #fff
-    font-size: 15px
-    font-weight: 600
-    padding-top: 3px
-    padding-bottom: 9px
-    text-align: center
-    transition: 0.4s
-
-    &:hover
-      cursor: pointer
-      transition: 0.4s
-      background-color: #fff
-      color: #161616
-
-  .workcontrol-buttons-first
-    display: inline-block
-    margin-top: 82px
-    margin-bottom: 20px
-    width: 80px
-    height: 16px
-    border: #fff solid 2px
-    color: #fff
-    font-size: 15px
-    font-weight: 600
-    padding-top: 3px
-    padding-bottom: 9px
-    text-align: center
-    transition: 0.4s
-
-    &:hover
-      cursor: pointer
-      transition: 0.4s
-      background-color: #fff
-      color: #161616
-
   .works-ul
+    float: left
     text-align: center
     list-style-type: none
     height: 82vh
@@ -606,21 +609,21 @@ ul
     opacity: 0
 
     &.unload
-      transition: all 2s linear
+      transition: all 1.2s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       border-bottom: rgba(255, 255, 255, 0) solid 2px
       opacity: 0
 
     &.load
-      transition: all 2s linear
+      transition: all 1.2s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       opacity: 1
 
     .work
       display: inline-block
-      margin-right: 220px
+      margin-right: 64px
       height:  82vh
-      width: 100%
+      width: 520px
       max-width: 1440px
       max-height: 720px
       background-color: #fff
@@ -629,32 +632,32 @@ ul
 
       .work-name
         width: 100%
-        font-size: 8vh
+        font-size: 6vh
         text-align: left
         font-weight: 600
         float: left
-        margin-left: -3vw
-        margin-top: 42vh
+        margin-left: -2vw
+        margin-top: 52vh
         margin-bottom: -20px
         opacity: 0
 
         &.load-up
-          transition: all 1.2s linear
+          transition: all 1.4s ease
           transition-timing-function: cubic-bezier(.42, 0, .58, 1)
-          margin-left: -11vw
+          margin-left: -5vw
           opacity: 0
 
         &.load-down
-          transition: all 1.2s linear
+          transition: all 1.4s ease
           transition-timing-function: cubic-bezier(.42, 0, .58, 1)
-          margin-left: -3vw
+          margin-left: -2vw
           opacity: 1
 
       .work-info
         width: 100%
         text-align: left
         font-size: 3vh
-        margin-left: -2vw
+        margin-left: -1vw
         font-weight: 600
         float: left
         margin-top: 20px
@@ -662,15 +665,15 @@ ul
         opacity: 0
 
         &.load-up
-          transition: all 1s linear
+          transition: all 1s ease
           transition-timing-function: cubic-bezier(.42, 0, .58, 1)
-          margin-left: -11vw
+          margin-left: -5vw
           opacity: 0
 
         &.load-down
-          transition: all 1s linear
+          transition: all 1s ease
           transition-timing-function: cubic-bezier(.42, 0, .58, 1)
-          margin-left: -2vw
+          margin-left: -1vw
           opacity: 1
 
       .work-link
@@ -680,14 +683,16 @@ ul
         font-size: 15px
         margin-top: 20px
         margin-left: 10vw
-        border: #fff solid 2px
+        border: #449D44 solid 2px
         width: 200px
         padding-top: 10px
         padding-bottom: 6px
         height: 24px
         padding-left: 30px
         opacity: 0
-        transition: all 0.4s linear
+        transition: all 0.4s ease
+        border-radius: 32px
+        background-color: #449D44
 
         span
           padding-right: 60px
@@ -697,16 +702,27 @@ ul
           content: ' \2192'
 
         &:hover
-          background-color: #fff
-          color: #161616
+          cursor: pointer
+          transition: 0.4s
+          transform: scale(1.06)
 
           span
             padding-right: 80px
             transition: 0.4s
 
+        &:active
+          transition: 0.4s
+          transform: scale(1)
+          background-color: #118E3C
+          border-color: #118E3C
+
+          span
+            padding-right: 60px
+            transition: 0.4s
+
         &.load-up
           transition-timing-function: cubic-bezier(.42, 0, .58, 1)
-          margin-left: 2vw
+          margin-left: 8vw
           opacity: 0
 
         &.load-down
@@ -738,7 +754,7 @@ ul
         transition: 0.4s
         background-color: #505050
         opacity: 0
-        transition: all 0.4s linear
+        transition: all 0.4s ease
         transition-timing-function: cubic-bezier(.42, 0, .58, 1)
 
         &.is-visible
@@ -782,12 +798,24 @@ ul
     width: 60px
     border: 0
     background-color: #fff
-    opacity: 0.3
+    opacity: 0
+
+  .line
+    &.open
+      transition: all 0.6s ease
+      transition-timing-function: cubic-bezier(.42, 0, .58, 1)
+      opacity: 0.3
+
+    &.close
+      transition: all 0.6s ease
+      transition-timing-function: cubic-bezier(.42, 0, .58, 1)
+      opacity: 0
 
   .letstalk
     display: block
     font-size: 28px
     margin-bottom: 12px
+    opacity: 0
 
     a
       color: #fff
@@ -795,7 +823,19 @@ ul
 
       &:hover
         opacity: 0.4
-        transition: 0.4s
+        transition: 0.4s,
+
+    &.open
+      transition: all 1.1s ease
+      transition-timing-function: cubic-bezier(.42, 0, .58, 1)
+      transform: translateY(0)
+      opacity: 1
+
+    &.close
+      transition: all 1.1s ease
+      transition-timing-function: cubic-bezier(.42, 0, .58, 1)
+      transform: translateY(15px)
+      opacity: 0
 
   .social
     list-style: none
@@ -807,6 +847,7 @@ ul
       display: inline-block
       margin-right: 14px
       transition: 0.4s
+      opacity: 0
 
       &:last-child
         margin-right: 0px
@@ -819,6 +860,18 @@ ul
         opacity: 0.4
         transition: 0.4s
 
+      &.open
+        transition: all 0.6s ease
+        transition-timing-function: cubic-bezier(.42, 0, .58, 1)
+        transform: scale(1)
+        opacity: 1
+
+      &.close
+        transition: all 0.6s ease
+        transition-timing-function: cubic-bezier(.42, 0, .58, 1)
+        transform: scale(0.9)
+        opacity: 0
+
   .year
     width: 100%
     font-size: 12px
@@ -826,7 +879,19 @@ ul
     margin-top: 92px
     margin-bottom: 52px
     text-align: center
-    opacity: 0.3
+    opacity: 0
+
+    &.open
+      transition: all 1.1s ease
+      transition-timing-function: cubic-bezier(.42, 0, .58, 1)
+      transform: translateY(0)
+      opacity: 0.3
+
+    &.close
+      transition: all 1.1s ease
+      transition-timing-function: cubic-bezier(.42, 0, .58, 1)
+      transform: translateY(15px)
+      opacity: 0
 
 @keyframes menu
   0%
@@ -871,14 +936,18 @@ ul
 
 @media only screen and (max-width : 500px)
   .works
-    .others-div
-      .others-ul
-        .other
+    .works-ul
+      .work
+        width: 520px
+
+  .others-div
+    .others-ul
+      .other
+        height: 205px
+        width: 237px
+        img
           height: 205px
           width: 237px
-          img
-            height: 205px
-            width: 237px
 
 @media only screen and (max-width : 800px)
   .recent-work
@@ -917,6 +986,12 @@ ul
         margin-top: -38vh
         height: 4vh
         width: 4vh
+
+  .works
+    .workcontrol
+      position: relative
+      margin-top: 5vh
+      margin-bottom: 3vh
 
   .footer
     .letstalk

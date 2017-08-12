@@ -180,14 +180,16 @@ ul {
     opacity: 1;
     transition: all 1.2s ease;
     transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
-  .resume span {
+  .resume a {
+    text-decoration: none;
+    color: #fff;
     float: right;
     font-size: 1.5vh;
     font-weight: 400;
     transition: 0.4s;
     letter-spacing: 2px;
     margin-left: 20px; }
-    .resume span:hover {
+    .resume a:hover {
       transition: 0.4s;
       cursor: pointer;
       opacity: 0.4; }
@@ -542,7 +544,16 @@ ul {
       max-height: 720px;
       background-color: #fff;
       vertical-align: middle;
-      transition: 0.4s; }
+      transition: 0.4s;
+      filter: blur(14px); }
+      .works .works-ul .work.blur-off {
+        filter: blur(0);
+        transition: all 1.4s ease;
+        transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
+      .works .works-ul .work.blur-on {
+        filter: blur(14px);
+        transition: all 1.4s ease;
+        transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
       .works .works-ul .work .work-name {
         width: 100%;
         font-size: 6vh;

@@ -210,7 +210,9 @@ ul
     transition: all 1.2s ease
     transition-timing-function: cubic-bezier(.42, 0, .58, 1)
 
-  span
+  a
+    text-decoration: none
+    color: #fff
     float: right
     font-size: 1.5vh
     font-weight: 400
@@ -629,6 +631,17 @@ ul
       background-color: #fff
       vertical-align: middle
       transition: 0.4s
+      filter: blur(14px)
+
+      &.blur-off
+        filter: blur(0)
+        transition: all 1.4s ease
+        transition-timing-function: cubic-bezier(.42, 0, .58, 1)
+
+      &.blur-on
+        filter: blur(14px)
+        transition: all 1.4s ease
+        transition-timing-function: cubic-bezier(.42, 0, .58, 1)
 
       .work-name
         width: 100%

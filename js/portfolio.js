@@ -16,8 +16,8 @@ app.controller('WorkController', function($scope) {
                  ];
 
    var move = 0,
-         numOfSlides = $scope.works.length-1,
-         count = 0;
+       numOfSlides = $scope.works.length-1,
+       count = 0;
 
      $scope.next = function() {
        if(count < numOfSlides) {
@@ -25,13 +25,9 @@ app.controller('WorkController', function($scope) {
          if(count >= 1) move -= 584;
          $('.works-ul').css("margin-left", move);
          count++;
+         $('.work').eq(count).removeClass('blur-on').addClass('blur-off');
+         $('.work').eq(count-1).removeClass('blur-off').addClass('blur-on');
        }
-     };
-
-     $scope.first = function() {
-       move = 0;
-       $('.works-ul').css("margin-left", move);
-       count = 0;
      };
 
      $scope.prev = function() {
@@ -39,6 +35,8 @@ app.controller('WorkController', function($scope) {
        if(count == 1) {move += 584; count--;}
        if(count >= 2) {move += 584; count--;}
        $('.works-ul').css("margin-left", move);
+       $('.work').eq(count).removeClass('blur-on').addClass('blur-off');
+       $('.work').eq(count+1).removeClass('blur-off').addClass('blur-on');
      };
 
 });
@@ -295,6 +293,7 @@ app.controller("bodyController", function($scope, $timeout){
         $('.section-name1').removeClass('load').addClass('unload');
         $('.head-works').removeClass('unload').addClass('load');
         $('.works-ul').removeClass('unload').addClass('load');
+        $('.work').eq(0).removeClass('blur-on').addClass('blur-off');
         setTimeout(function(){
           $('.work-name').removeClass('load-up').addClass('load-down');
           $('.work-info').removeClass('load-up').addClass('load-down');

@@ -66,25 +66,25 @@ app.controller('OtherController', function($scope) {
 
 var others = [
               { color: '#161616 ', link: 'https://github.com/berkekiran/portfolio-2017', name: 'Portfolio 2017', year: '2017', image: 'images/other-projects/portfolio-2017.png'},
-              { color: '#303030 ', link: 'https://github.com/berkekiran/portfolio-2016-v2', name: 'Portfolio 2016 v2', year: '2016', image: 'images/other-projects/portfolio-2016-v2.png'},
-              { color: '#a8933a ', link: 'https://github.com/berkekiran/video-games-center-station', name: 'Video Games Center Station', year: '2016', image: 'images/other-projects/video-games-center-station.png'},
-              { color: '#303030 ', link: 'https://github.com/berkekiran/portfolio-2016', name: 'Portfolio 2016', year: '2016', image: 'images/other-projects/portfolio-2016.png'},
-              { color: '#303030 ', link: 'https://github.com/berkekiran/portfolio-2015-v5', name: 'Portfolio 2015 v5', year: '2015', image: 'images/other-projects/portfolio-2015-v5.png'},
+              { color: '#303030 ', link: 'https://www.behance.net/gallery/55791649/Portfolio-2016-v2', name: 'Portfolio 2016 v2', year: '2016', image: 'images/other-projects/portfolio-2016-v2.png'},
+              { color: '#a8933a ', link: 'https://www.behance.net/gallery/55790661/Video-Games-Center-Station', name: 'Video Games Center Station', year: '2016', image: 'images/other-projects/video-games-center-station.png'},
+              { color: '#303030 ', link: 'https://www.behance.net/gallery/55771277/Portfolio-2016', name: 'Portfolio 2016', year: '2016', image: 'images/other-projects/portfolio-2016.png'},
+              { color: '#303030 ', link: 'https://www.behance.net/gallery/55754747/Portfolio-2015-v5', name: 'Portfolio 2015 v5', year: '2015', image: 'images/other-projects/portfolio-2015-v5.png'},
               { color: '#cccccc ', link: 'https://www.artstation.com/artwork/ONdgg', name: 'UE4 Snowy Road', year: '2015', image: 'images/other-projects/snowyroad.png'},
               { color: '#cccccc ', link: 'https://github.com/berkekiran/ue4-snow-system-v2', name: 'UE4 Snow System v2', year: '2015', image: 'images/other-projects/ue4-snow-system-v2.png'},
               { color: '#cccccc ', link: 'https://github.com/berkekiran/ue4-snow-system-v1', name: 'UE4 Snow System v1', year: '2015', image: 'images/other-projects/ue4-snow-system-v1.png'},
-              { color: '#1D1F1E ', link: 'https://github.com/berkekiran/portfolio-2015-v4', name: 'Portfolio 2015 v4', year: '2015', image: 'images/other-projects/portfolio-2015-v4.png'},
-              { color: '#161616 ', link: 'https://github.com/berkekiran/portfolio-2015-v3-design', name: 'Portfolio 2015 v3 Design', year: '2015', image: 'images/other-projects/portfolio-2015-v3-design.png'},
-              { color: '#cccccc ', link: 'https://github.com/berkekiran/portfolio-2015-v2-design', name: 'Portfolio 2015 v2 Design', year: '2015', image: 'images/other-projects/portfolio-2015-v2-design.png'},
+              { color: '#1D1F1E ', link: 'https://www.behance.net/gallery/55752371/Portfolio-2015-v4', name: 'Portfolio 2015 v4', year: '2015', image: 'images/other-projects/portfolio-2015-v4.png'},
+              { color: '#161616 ', link: 'https://www.behance.net/gallery/55748605/Portfolio-2015-v3-Design', name: 'Portfolio 2015 v3 Design', year: '2015', image: 'images/other-projects/portfolio-2015-v3-design.png'},
+              { color: '#cccccc ', link: 'https://www.behance.net/gallery/55747869/Portfolio-2015-v2-Design', name: 'Portfolio 2015 v2 Design', year: '2015', image: 'images/other-projects/portfolio-2015-v2-design.png'},
               { color: '#f8f8f8 ', link: 'https://soundcloud.com/berkekiran/berkekiran-truth', name: 'Berke Kiran - Truth', year: '2015', image: 'images/other-projects/berkekiran-truth.png'},
               { color: '#f8f8f8 ', link: 'https://soundcloud.com/berkekiran/berkekiran-death', name: 'Berke Kiran - Death', year: '2015', image: 'images/other-projects/berkekiran-death.png'},
               { color: '#f8f8f8 ', link: 'https://soundcloud.com/berkekiran/adam-noise-soundtrack-v3', name: 'Adam Noise - Soundtrack v3', year: '2015', image: 'images/other-projects/adam-noise-soundtrack-v3.png'},
               { color: '#f8f8f8 ', link: 'https://soundcloud.com/berkekiran/adam-noise-soundtrack-v2', name: 'Adam Noise - Soundtrack v2', year: '2015', image: 'images/other-projects/adam-noise-soundtrack-v2.png'},
               { color: '#f8f8f8 ', link: 'https://soundcloud.com/berkekiran/adam-noise-soundtrack-v1', name: 'Adam Noise - Soundtrack v1', year: '2015', image: 'images/other-projects/adam-noise-soundtrack-v1.png'},
               { color: '#f8f8f8 ', link: 'https://vimeo.com/226496501', name: 'Metal Dragon - Video', year: '2015', image: 'images/other-projects/metal-dragon.png'},
-              { color: '#f8f8f8 ', link: 'https://github.com/berkekiran/portfolio-2015', name: 'Portfolio 2015', year: '2015', image: 'images/other-projects/portfolio-2015.png'},
-              { color: '#a7aaa9 ', link: 'https://github.com/berkekiran/photo-galleries', name: 'Photo Galleries', year: '2014', image: 'images/other-projects/photo-galleries.png'},
-              { color: '#444349 ', link: 'https://github.com/berkekiran/quick-write', name: 'Quick Write', year: '2013', image: 'images/other-projects/quick-write.png'}
+              { color: '#f8f8f8 ', link: 'https://www.behance.net/gallery/55742749/Portfolio-2015', name: 'Portfolio 2015', year: '2015', image: 'images/other-projects/portfolio-2015.png'},
+              { color: '#a7aaa9 ', link: 'https://www.behance.net/gallery/55738571/Photo-Galleries', name: 'Photo Galleries', year: '2014', image: 'images/other-projects/photo-galleries.png'},
+              { color: '#444349 ', link: 'https://www.behance.net/gallery/55736987/Quick-Write', name: 'Quick Write', year: '2013', image: 'images/other-projects/quick-write.png'}
              ];
 
 
@@ -220,6 +220,7 @@ app.controller("bodyController", function($scope, $timeout){
   // Page Animations
 
     // Onload Animations
+    var player = new Vimeo.Player($('.showreel-iframe'));
 
     window.onload = function(){
       var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
@@ -235,6 +236,7 @@ app.controller("bodyController", function($scope, $timeout){
       $('.section-name0').addClass('unload');
       $('.about-button').addClass('fade-in');
       $('.resume').addClass('load');
+      player.pause();
     }
 
     // Scroll Based Animations
@@ -253,7 +255,6 @@ app.controller("bodyController", function($scope, $timeout){
       var i;
       var otherLength = $('.other').length;
       var socialLength = $('.social-li').length;
-
 
       if(scrollTop > recentWorkText) {
         $('.about-button').removeClass('fade-in').addClass('fade-out');
@@ -276,16 +277,19 @@ app.controller("bodyController", function($scope, $timeout){
         $('.explore-button').removeClass('unload').addClass('load');
         $('.section-name0').removeClass('load').addClass('unload');
         $('.section-name1').removeClass('load').addClass('unload');
+        player.pause();
       }
 
       if(scrollTop > waypointAbout) {
         $('.about-text').removeClass('close').addClass('open');
         $('.showreel').removeClass('close').addClass('open');
         $('.play-button').removeClass('close').addClass('open');
+        player.play();
       } else if(scrollTop < waypointAbout) {
         $('.about-text').removeClass('open').addClass('close');
         $('.showreel').removeClass('open').addClass('close');
         $('.play-button').removeClass('open').addClass('close');
+        player.pause();
       }
 
       if(scrollTop >= works) {

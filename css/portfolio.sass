@@ -393,17 +393,18 @@ ul
 
   .showreel-div
     position: absolute
-    display: block
     margin-top: -60vh
     margin-left: 20vw
+    height: 72vh
+    width: 64vw
 
     .showreel
-      position: absolute
-      z-index: -1
-      height: 72vh
-      width: 64vw
-      background-color: #000
+      position: relative
+      padding-bottom: 56.25%
+      overflow: hidden
+      max-width: 100%
       opacity: 0
+      z-index: -1
 
       &.open
         transition: all 1.4s ease
@@ -415,7 +416,16 @@ ul
         transition-timing-function: cubic-bezier(.42, 0, .58, 1)
         opacity: 0
 
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+
     .play-button
+      position: absolute
+      top: 0
       z-index: 1
       background-image: url('/images/extra/play.svg')
       background-repeat: no-repeat
@@ -427,6 +437,7 @@ ul
       width: 4vh
       transition: 0.4s
       opacity: 0
+      display: block
 
       &:hover
         transition: 0.4s
@@ -611,13 +622,13 @@ ul
     opacity: 0
 
     &.unload
-      transition: all 1.2s ease
+      transition: all 0.8s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       border-bottom: rgba(255, 255, 255, 0) solid 2px
       opacity: 0
 
     &.load
-      transition: all 1.2s ease
+      transition: all 0.8s ease
       transition-timing-function: cubic-bezier(.42, 0, .58, 1)
       opacity: 1
 
@@ -635,12 +646,12 @@ ul
 
       &.blur-off
         filter: blur(0)
-        transition: all 1.4s ease
+        transition: all 0.8s ease
         transition-timing-function: cubic-bezier(.42, 0, .58, 1)
 
       &.blur-on
         filter: blur(14px)
-        transition: all 1.4s ease
+        transition: all 0.8s ease
         transition-timing-function: cubic-bezier(.42, 0, .58, 1)
 
       .work-name
@@ -773,11 +784,12 @@ ul
         &.is-visible
           opacity: 1
 
+          &:hover
+            transition: 0.4s
+            opacity: 0.2
+
         &.is-not-visible
           opacity: 0
-
-        &:hover
-          transition: 0.4s
 
         a
           color: #fff
@@ -991,7 +1003,6 @@ ul
       .showreel
         position: relative
         width: 100%
-        height: 100%
         background-color: #000
       .play-button
         z-index: 1

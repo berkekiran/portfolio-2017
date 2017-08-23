@@ -15,7 +15,9 @@ body {
     cursor: default; }
 
 ul {
-  -webkit-padding-start: 0px; }
+  list-style-type: none;
+  overflow: hidden;
+  padding-left: 0px; }
 
 ::-webkit-scrollbar {
   display: none; }
@@ -27,11 +29,7 @@ ul {
   margin-right: auto;
   top: 0;
   left: 0;
-  right: 0;
-  opacity: 0;
-  transition: all 1.4s ease-out; }
-  .wrapper.load {
-    opacity: 1; }
+  right: 0; }
 
 .ui {
   position: fixed;
@@ -42,8 +40,13 @@ ul {
   height: auto; }
   .ui .menu-button {
     position: absolute;
+    z-index: 10;
     width: 32px;
     height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    min-width: 32px;
+    min-height: 32px;
     top: 4.4vw;
     left: 3.8vw;
     transition: 0.4s; }
@@ -77,34 +80,12 @@ ul {
   .ui .section-name {
     position: absolute;
     z-index: 8;
+    width: 100vw;
     height: 24px;
     top: 4.4vw;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 2vh;
     font-weight: 400;
     text-align: center; }
-    .ui .section-name .section-name0 {
-      transition: all 0.4s;
-      transform: translateY(-30px);
-      opacity: 0; }
-      .ui .section-name .section-name0.load {
-        transform: translateY(-30px);
-        opacity: 0; }
-      .ui .section-name .section-name0.unload {
-        transform: translateY(0px);
-        opacity: 1; }
-    .ui .section-name .section-name1 {
-      transition: all 0.4s;
-      opacity: 0; }
-      .ui .section-name .section-name1.load {
-        transform: translateY(-30px);
-        opacity: 1; }
-      .ui .section-name .section-name1.unload {
-        transform: translateY(0px);
-        opacity: 0; }
-    .ui .section-name div:last-child {
-      opacity: 0; }
   .ui .menu-ui {
     position: fixed;
     z-index: -1;
@@ -170,16 +151,10 @@ ul {
 .resume {
   position: fixed;
   z-index: 8;
-  bottom: 22px;
+  bottom: 56px;
   right: -26px;
   transform: rotate(-90deg);
-  display: inline-block;
-  opacity: 0; }
-  .resume.load {
-    bottom: 56px;
-    opacity: 1;
-    transition: all 1.2s ease;
-    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
+  display: inline-block; }
   .resume a {
     text-decoration: none;
     color: #fff;
@@ -215,67 +190,15 @@ ul {
   background-image: url("/images/recent-work/recent-work.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  transform: translateY(-22vh);
-  opacity: 0; }
+  background-position: center; }
   .recent-work:hover {
     filter: grayscale(0);
     transition: 0.4s; }
-  .recent-work.move-up {
-    transition: all 1.2s ease;
-    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-    transform: translateY(-22vh);
-    opacity: 0; }
-  .recent-work.move-down {
-    transition: all 1.2s ease;
-    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-    transform: translateY(0);
-    opacity: 1; }
   .recent-work h1 {
     font-size: 6.4vh;
     font-weight: 700; }
-  .recent-work .recent-work-text {
-    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-    margin-left: -12vw;
-    opacity: 0; }
-    .recent-work .recent-work-text.load-up {
-      transition: all 1s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      margin-left: -12vw;
-      opacity: 0; }
-    .recent-work .recent-work-text.load-down {
-      transition: all 1s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      margin-left: -4vw;
-      opacity: 1; }
-  .recent-work .recent-work-text1 {
-    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-    margin-left: -12vw;
-    opacity: 0; }
-    .recent-work .recent-work-text1.load-up {
-      transition: all 0.8s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      margin-left: -12vw;
-      opacity: 0; }
-    .recent-work .recent-work-text1.load-down {
-      transition: all 0.8s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      margin-left: -4vw;
-      opacity: 1; }
-  .recent-work .recent-work-text2 {
-    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-    margin-left: -12vw;
-    opacity: 0; }
-    .recent-work .recent-work-text2.load-up {
-      transition: all 0.6s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      margin-left: -12vw;
-      opacity: 0; }
-    .recent-work .recent-work-text2.load-down {
-      transition: all 0.6s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      margin-left: -4vw;
-      opacity: 1; }
+  .recent-work span {
+    margin-left: -4vw; }
   .recent-work .explore-button {
     position: relative;
     margin-top: -22px;
@@ -287,22 +210,12 @@ ul {
     transition: 0.4s;
     padding-bottom: 0.6vh;
     border-bottom: #fff solid 2px;
-    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-    opacity: 0; }
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
     .recent-work .explore-button:hover {
       cursor: pointer;
       border-bottom-color: #F44336;
       transition: 0.4s;
       width: 154px; }
-    .recent-work .explore-button.unload {
-      transition: all 1s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      border-bottom: rgba(255, 255, 255, 0) solid 2px;
-      opacity: 0; }
-    .recent-work .explore-button.load {
-      transition: 0.4s;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      opacity: 1; }
 
 .profile {
   margin-top: 6vh;
@@ -322,18 +235,7 @@ ul {
     font-size: 2vh;
     line-height: 4vh;
     color: #505050;
-    width: 72vh;
-    opacity: 0; }
-    .profile p.open {
-      transition: all 1.1s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      transform: translateY(0);
-      opacity: 1; }
-    .profile p.close {
-      transition: all 1.1s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      transform: translateY(10vh);
-      opacity: 0; }
+    width: 72vh; }
     .profile p span {
       color: #fff; }
   .profile .showreel-div {
@@ -347,47 +249,13 @@ ul {
       padding-bottom: 56.25%;
       overflow: hidden;
       max-width: 100%;
-      opacity: 0;
       z-index: -1; }
-      .profile .showreel-div .showreel.open {
-        transition: all 1.4s ease;
-        transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-        opacity: 1; }
-      .profile .showreel-div .showreel.close {
-        transition: all 1.4s ease;
-        transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-        opacity: 0; }
     .profile .showreel-div iframe {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%; }
-    .profile .showreel-div .play-button {
-      position: absolute;
-      top: 0;
-      z-index: 1;
-      background-image: url("/images/extra/play.svg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      margin-left: 60vw;
-      margin-top: 3.6vh;
-      height: 4vh;
-      width: 4vh;
-      transition: 0.4s;
-      opacity: 0;
-      display: block; }
-      .profile .showreel-div .play-button:hover {
-        transition: 0.4s;
-        cursor: pointer;
-        background-image: url("/images/extra/play-hover.svg"); }
-      .profile .showreel-div .play-button.open {
-        transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-        opacity: 1; }
-      .profile .showreel-div .play-button.close {
-        transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-        opacity: 0; }
   .profile .about-button {
     margin-left: auto;
     margin-right: auto;
@@ -397,22 +265,12 @@ ul {
     text-align: center;
     padding-bottom: 0.5vh;
     border-bottom: #fff solid 2px;
-    transition: all 0.4s ease;
-    opacity: 0; }
+    transition: all 0.4s ease; }
     .profile .about-button:hover {
       cursor: pointer;
       border-bottom-color: #F44336;
       transition: 0.4s;
       width: 9vh; }
-    .profile .about-button.fade-in {
-      transition: 0.4s;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      opacity: 1; }
-    .profile .about-button.fade-out {
-      transition: all 1s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      border-bottom: rgba(255, 255, 255, 0) solid 2px;
-      opacity: 0; }
 
 .works {
   margin-left: auto;
@@ -427,39 +285,19 @@ ul {
     width: 14vh;
     border-bottom: #fff solid 3px;
     margin-bottom: 4vh;
-    padding-bottom: 0.5vh;
-    opacity: 0; }
-    .works .head-works.unload {
-      transition: all 1s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      border-bottom: rgba(255, 255, 255, 0) solid 2px;
-      opacity: 0; }
-    .works .head-works.load {
-      transition: all 1s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      opacity: 1; }
+    padding-bottom: 0.5vh; }
   .works .head-others-div {
     margin-left: 0px; }
     .works .head-others-div .head-others {
-      margin-top: 82vh;
+      margin-top: 22vh;
       margin-left: auto;
       margin-right: auto;
       font-size: 3vh;
       font-weight: 400;
       width: 10vh;
       border-bottom: #fff solid 3px;
-      margin-bottom: 4vh;
-      padding-bottom: 0.5vh;
-      opacity: 0; }
-      .works .head-others-div .head-others.unload {
-        transition: all 1s ease;
-        transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-        border-bottom: rgba(255, 255, 255, 0) solid 2px;
-        opacity: 0; }
-      .works .head-others-div .head-others.load {
-        transition: all 1s ease;
-        transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-        opacity: 1; }
+      margin-bottom: 12vh;
+      padding-bottom: 0.5vh; }
   .works .workcontrol {
     position: absolute;
     z-index: 4;
@@ -468,17 +306,7 @@ ul {
     margin-top: -8vh;
     margin-bottom: 10vh;
     margin-left: auto;
-    margin-right: auto;
-    opacity: 0; }
-    .works .workcontrol.unload {
-      transition: all 0.6s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      border-bottom: rgba(255, 255, 255, 0) solid 2px;
-      opacity: 0; }
-    .works .workcontrol.load {
-      transition: all 0.8s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      opacity: 1; }
+    margin-right: auto; }
   .works .workcontrol-buttons {
     display: inline-block;
     margin-bottom: 20px;
@@ -528,23 +356,14 @@ ul {
         background-color: #fff;
         color: #161616; }
   .works .works-ul {
-    float: left;
     text-align: center;
     list-style-type: none;
     height: 82vh;
-    width: 100%;
     white-space: nowrap;
     display: inline-block;
-    opacity: 0; }
-    .works .works-ul.unload {
-      transition: all 0.8s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      border-bottom: rgba(255, 255, 255, 0) solid 2px;
-      opacity: 0; }
-    .works .works-ul.load {
-      transition: all 0.8s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      opacity: 1; }
+    transition: all 0.8s ease;
+    padding-left: 40px;
+    padding-top: 40px; }
     .works .works-ul .work {
       display: inline-block;
       margin-right: 64px;
@@ -572,18 +391,7 @@ ul {
         float: left;
         margin-left: -2vw;
         margin-top: 52vh;
-        margin-bottom: -20px;
-        opacity: 0; }
-        .works .works-ul .work .work-name.load-up {
-          transition: all 1.4s ease;
-          transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          margin-left: -5vw;
-          opacity: 0; }
-        .works .works-ul .work .work-name.load-down {
-          transition: all 1.4s ease;
-          transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          margin-left: -2vw;
-          opacity: 1; }
+        margin-bottom: -20px; }
       .works .works-ul .work .work-info {
         width: 100%;
         text-align: left;
@@ -592,18 +400,7 @@ ul {
         font-weight: 600;
         float: left;
         margin-top: 20px;
-        color: #F44336;
-        opacity: 0; }
-        .works .works-ul .work .work-info.load-up {
-          transition: all 1s ease;
-          transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          margin-left: -5vw;
-          opacity: 0; }
-        .works .works-ul .work .work-info.load-down {
-          transition: all 1s ease;
-          transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          margin-left: -1vw;
-          opacity: 1; }
+        color: #F44336; }
       .works .works-ul .work .work-link {
         display: block;
         text-decoration: none;
@@ -617,7 +414,6 @@ ul {
         padding-bottom: 6px;
         height: 24px;
         padding-left: 30px;
-        opacity: 0;
         transition: all 0.4s ease;
         border-radius: 32px;
         background-color: #449D44; }
@@ -641,14 +437,6 @@ ul {
           .works .works-ul .work .work-link:active span {
             padding-right: 60px;
             transition: 0.4s; }
-        .works .works-ul .work .work-link.load-up {
-          transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          margin-left: 8vw;
-          opacity: 0; }
-        .works .works-ul .work .work-link.load-down {
-          transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-          margin-left: 10vw;
-          opacity: 1; }
   .works .others-div {
     margin-left: -50px; }
     .works .others-div .others-ul {
@@ -670,16 +458,11 @@ ul {
         display: inline-block;
         transition: 0.4s;
         background-color: #505050;
-        opacity: 0;
         transition: all 0.4s ease;
         transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
-        .works .others-div .others-ul .other.is-visible {
-          opacity: 1; }
-          .works .others-div .others-ul .other.is-visible:hover {
-            transition: 0.4s;
-            opacity: 0.2; }
-        .works .others-div .others-ul .other.is-not-visible {
-          opacity: 0; }
+        .works .others-div .others-ul .other:hover {
+          transition: 0.4s;
+          opacity: 0.2; }
         .works .others-div .others-ul .other a {
           color: #fff;
           text-decoration: none; }
@@ -707,37 +490,17 @@ ul {
     height: 2px;
     width: 60px;
     border: 0;
-    background-color: #fff;
-    opacity: 0; }
-  .footer .line.open {
-    transition: all 0.6s ease;
-    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-    opacity: 0.3; }
-  .footer .line.close {
-    transition: all 0.6s ease;
-    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-    opacity: 0; }
+    background-color: #fff; }
   .footer .letstalk {
     display: block;
     font-size: 28px;
-    margin-bottom: 12px;
-    opacity: 0; }
+    margin-bottom: 12px; }
     .footer .letstalk a {
       color: #fff;
       transition: 0.4s; }
       .footer .letstalk a:hover {
         opacity: 0.4;
         transition: 0.4s; }
-    .footer .letstalk.open {
-      transition: all 1.1s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      transform: translateY(0);
-      opacity: 1; }
-    .footer .letstalk.close {
-      transition: all 1.1s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      transform: translateY(15px);
-      opacity: 0; }
   .footer .social {
     list-style: none;
     display: inline-block;
@@ -746,8 +509,7 @@ ul {
     .footer .social li {
       display: inline-block;
       margin-right: 14px;
-      transition: 0.4s;
-      opacity: 0; }
+      transition: 0.4s; }
       .footer .social li:last-child {
         margin-right: 0px; }
       .footer .social li img {
@@ -756,34 +518,13 @@ ul {
       .footer .social li:hover {
         opacity: 0.4;
         transition: 0.4s; }
-      .footer .social li.open {
-        transition: all 0.6s ease;
-        transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-        transform: scale(1);
-        opacity: 1; }
-      .footer .social li.close {
-        transition: all 0.6s ease;
-        transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-        transform: scale(0.9);
-        opacity: 0; }
   .footer .year {
     width: 100%;
     font-size: 12px;
     letter-spacing: 0.6px;
     margin-top: 92px;
     margin-bottom: 52px;
-    text-align: center;
-    opacity: 0; }
-    .footer .year.open {
-      transition: all 1.1s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      transform: translateY(0);
-      opacity: 0.3; }
-    .footer .year.close {
-      transition: all 1.1s ease;
-      transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-      transform: translateY(15px);
-      opacity: 0; }
+    text-align: center; }
 
 @keyframes menu {
   0% {
@@ -822,16 +563,6 @@ ul {
   100% {
     opacity: 0; } }
 @media only screen and (max-width: 500px) {
-  .works .works-ul .work {
-    width: 520px; }
-
-  .others-div .others-ul .other {
-    height: 205px;
-    width: 237px; }
-    .others-div .others-ul .other img {
-      height: 205px;
-      width: 237px; } }
-@media only screen and (max-width: 800px) {
   .recent-work {
     height: 36vh;
     padding-top: 28vh; }
@@ -860,18 +591,68 @@ ul {
       .profile .showreel-div .showreel {
         position: relative;
         width: 100%;
+        z-index: 0;
         background-color: #000; }
-      .profile .showreel-div .play-button {
-        z-index: 1;
-        margin-left: 70vw;
-        margin-top: -38vh;
-        height: 4vh;
-        width: 4vh; }
 
   .works .workcontrol {
     position: relative;
     margin-top: 5vh;
     margin-bottom: 3vh; }
+  .works .workcontrol-buttons {
+    width: 100px; }
+  .works .others-div .others-ul .other {
+    height: 205px;
+    width: 237px; }
+    .works .others-div .others-ul .other img {
+      height: 205px;
+      width: 237px; }
+
+  .footer .letstalk {
+    font-size: 2vh; }
+  .footer .social li img {
+    height: 16px;
+    width: 16px; }
+  .footer .year {
+    font-size: 11px;
+    margin-top: 72px; } }
+@media only screen and (min-width: 505px) and (max-width: 800px) {
+  .recent-work {
+    height: 36vh;
+    padding-top: 28vh; }
+    .recent-work h1 {
+      font-size: 6.4vw; }
+    .recent-work .explore-button {
+      font-size: 1.8vh;
+      width: 13vh;
+      margin-top: -12px; }
+      .recent-work .explore-button:hover {
+        width: 134px; }
+
+  .profile {
+    margin-bottom: 34vh; }
+    .profile p {
+      margin-top: 34vh;
+      font-size: 1.8vh;
+      line-height: 3vh;
+      width: 100%; }
+    .profile .showreel-div {
+      position: relative;
+      height: 42vh;
+      width: 100%;
+      margin-top: 5vh;
+      margin-left: 0; }
+      .profile .showreel-div .showreel {
+        position: relative;
+        width: 100%;
+        z-index: 0;
+        background-color: #000; }
+
+  .works .workcontrol {
+    position: relative;
+    margin-top: 5vh;
+    margin-bottom: 3vh; }
+  .works .workcontrol-buttons {
+    width: 120px; }
 
   .footer .letstalk {
     font-size: 2vh; }

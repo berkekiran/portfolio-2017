@@ -27,6 +27,7 @@ app.controller('WorkController', function($scope) {
          count++;
          $('.work').eq(count).removeClass('blur-on').addClass('blur-off');
          $('.work').eq(count-1).removeClass('blur-off').addClass('blur-on');
+         $('.section-name').html(move);
        }
      };
 
@@ -37,6 +38,7 @@ app.controller('WorkController', function($scope) {
        $('.works-ul').css("margin-left", move);
        $('.work').eq(count).removeClass('blur-on').addClass('blur-off');
        $('.work').eq(count+1).removeClass('blur-off').addClass('blur-on');
+       $('.section-name').html(move);
      };
 
 });
@@ -65,7 +67,8 @@ app.controller('OtherController', function($scope) {
 // Others List
 
 var others = [
-              { color: '#161616 ', link: 'https://github.com/berkekiran/portfolio-2017', name: 'Portfolio 2017', year: '2017', image: 'images/other-projects/portfolio-2017.png'},
+              { color: '#161616 ', link: 'https://www.artstation.com/artwork/0gXRK', name: "Berke Kiran' Sketchbook", year: '2017', image: 'images/other-projects/sketchbook.png'},
+	      { color: '#161616 ', link: 'https://github.com/berkekiran/portfolio-2017', name: 'Portfolio 2017', year: '2017', image: 'images/other-projects/portfolio-2017.png'},
               { color: '#303030 ', link: 'https://www.behance.net/gallery/55791649/Portfolio-2016-v2', name: 'Portfolio 2016 v2', year: '2016', image: 'images/other-projects/portfolio-2016-v2.png'},
               { color: '#a8933a ', link: 'https://www.behance.net/gallery/55790661/Video-Games-Center-Station', name: 'Video Games Center Station', year: '2016', image: 'images/other-projects/video-games-center-station.png'},
               { color: '#303030 ', link: 'https://www.behance.net/gallery/55771277/Portfolio-2016', name: 'Portfolio 2016', year: '2016', image: 'images/other-projects/portfolio-2016.png'},
@@ -215,156 +218,14 @@ app.controller("bodyController", function($scope, $timeout){
                        ];
 });
 
+
 // Other Javascript Codes
 
-  // Page Animations
+$( document ).ready(function() {
+  var iframe = document.querySelector('iframe');
+  var player = new Vimeo.Player(iframe);
+  player.setVolume(0);
 
-    // Onload Animations
-    var player = new Vimeo.Player($('.showreel-iframe'));
+  $('.work').eq(0).addClass('blur-off');
 
-    window.onload = function(){
-      var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
-      $('html, body').animate({
-            scrollTop: 0
-        }, 1400);
-      $('.wrapper').addClass('load');
-      $('.recent-work').addClass('move-down');
-      $('.recent-work-text').addClass('load-down');
-      $('.recent-work-text1').addClass('load-down');
-      $('.recent-work-text2').addClass('load-down');
-      $('.explore-button').addClass('load');
-      $('.section-name0').addClass('unload');
-      $('.about-button').addClass('fade-in');
-      $('.resume').addClass('load');
-      player.pause();
-    }
-
-    // Scroll Based Animations
-
-    window.addEventListener("scroll", function(){
-      var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
-
-      var aboutButton = $('.about-button').offset().top-100;
-      var works = $('.works').offset().top-150;
-      var recentWork = $('.recent-work').offset().top;
-      var wrapper = $('.wrapper').offset().top;
-      var recentWorkText = $('.recent-work-text').offset().top-100;
-      var waypointAbout = $('.waypoint-about').offset().top-100;
-      var workName = $('.work-name').offset().top;
-      var more = $('.more').offset().top;
-      var i;
-      var otherLength = $('.other').length;
-      var socialLength = $('.social-li').length;
-
-      if(scrollTop > recentWorkText) {
-        $('.about-button').removeClass('fade-in').addClass('fade-out');
-        $('.recent-work').removeClass('move-down').addClass('move-up');
-        $('.recent-work-text').removeClass('load-down').addClass('load-up');
-        $('.recent-work-text1').removeClass('load-down').addClass('load-up');
-        $('.recent-work-text2').removeClass('load-down').addClass('load-up');
-        $('.explore-button').removeClass('load').addClass('unload');
-        $('.section-name0').removeClass('unload').addClass('load');
-        $('.section-name1').removeClass('unload').addClass('load');
-      } else if(scrollTop < recentWorkText) {
-        $('.about-button').removeClass('fade-out').addClass('fade-in');
-      }
-
-      if(scrollTop <= wrapper+100) {
-        $('.recent-work').removeClass('move-up').addClass('move-down');
-        $('.recent-work-text').removeClass('load-up').addClass('load-down');
-        $('.recent-work-text1').removeClass('load-up').addClass('load-down');
-        $('.recent-work-text2').removeClass('load-up').addClass('load-down');
-        $('.explore-button').removeClass('unload').addClass('load');
-        $('.section-name0').removeClass('load').addClass('unload');
-        $('.section-name1').removeClass('load').addClass('unload');
-        player.pause();
-      }
-
-      if(scrollTop > waypointAbout) {
-        $('.about-text').removeClass('close').addClass('open');
-        $('.showreel').removeClass('close').addClass('open');
-        $('.play-button').removeClass('close').addClass('open');
-        player.play();
-      } else if(scrollTop < waypointAbout) {
-        $('.about-text').removeClass('open').addClass('close');
-        $('.showreel').removeClass('open').addClass('close');
-        $('.play-button').removeClass('open').addClass('close');
-        player.pause();
-      }
-
-      if(scrollTop >= works) {
-        $('.section-name0').removeClass('load').addClass('unload');
-        $('.section-name1').removeClass('load').addClass('unload');
-        $('.head-works').removeClass('unload').addClass('load');
-        $('.works-ul').removeClass('unload').addClass('load');
-        $('.work').eq(0).removeClass('blur-on').addClass('blur-off');
-        setTimeout(function(){
-          $('.work-name').removeClass('load-up').addClass('load-down');
-          $('.work-info').removeClass('load-up').addClass('load-down');
-          $('.work-link').removeClass('load-up').addClass('load-down');
-          $('.workcontrol').removeClass('unload').addClass('load');
-        }, 800);
-      } else if(scrollTop < works){
-        $('.head-works').removeClass('load').addClass('unload');
-        $('.works-ul').removeClass('load').addClass('unload');
-        setTimeout(function(){
-          $('.work-name').removeClass('load-down').addClass('load-up');
-          $('.work-info').removeClass('load-down').addClass('load-up');
-          $('.work-link').removeClass('load-down').addClass('load-up');
-          $('.work-link').removeClass('load-down').addClass('load-up');
-          $('.workcontrol').removeClass('load').addClass('unload');
-        }, 800);
-      }
-
-      if(scrollTop >= workName) {
-        $('.head-others').removeClass('unload').addClass('load');
-        for(i= 0; i<= otherLength; i++) {
-          $('.other').each(function(i){
-            if(i < 6){
-              setTimeout(function(){
-                $('.other').eq(i).removeClass('is-not-visible').addClass('is-visible');
-              }, 100 * i);
-            } else if(i >= 6){
-              setTimeout(function(){
-                $('.other').eq(i).removeClass('is-not-visible').addClass('is-visible');
-              }, 100 * (i-5));
-            }
-          });
-        }
-      } else if(scrollTop < workName){
-        $('.head-others').removeClass('load').addClass('unload');
-        for(i= 0; i<= otherLength; i++) {
-          $('.other').each(function(i){
-              setTimeout(function(){
-                $('.other').eq(i).removeClass('is-visible').addClass('is-not-visible');
-              }, 100 * i);
-          });
-        }
-      }
-
-      if(scrollTop >= (more-400)) {
-        $('.letstalk').removeClass('close').addClass('open');
-        $('.line').removeClass('close').addClass('open');
-        $('.year').removeClass('close').addClass('open');
-        for(i= 0; i<= socialLength; i++) {
-          $('.social-li').each(function(i){
-              setTimeout(function(){
-                $('.social-li').eq(i).removeClass('close').addClass('open');
-              }, 100 * i);
-          });
-        }
-      } else if(scrollTop < (more-400)){
-        $('.letstalk').removeClass('open').addClass('close');
-        $('.line').removeClass('open').addClass('close');
-        $('.year').removeClass('open').addClass('close');
-        for(i= 0; i<= socialLength; i++) {
-          $('.social-li').each(function(i){
-              setTimeout(function(){
-                $('.social-li').eq(i).removeClass('open').addClass('close');
-              }, 100 * i);
-          });
-        }
-
-      }
-
-    }, true);
+});

@@ -27,7 +27,6 @@ app.controller('WorkController', function($scope) {
          count++;
          $('.work').eq(count).removeClass('blur-on').addClass('blur-off');
          $('.work').eq(count-1).removeClass('blur-off').addClass('blur-on');
-         $('.section-name').html(move);
        }
      };
 
@@ -38,7 +37,6 @@ app.controller('WorkController', function($scope) {
        $('.works-ul').css("margin-left", move);
        $('.work').eq(count).removeClass('blur-on').addClass('blur-off');
        $('.work').eq(count+1).removeClass('blur-off').addClass('blur-on');
-       $('.section-name').html(move);
      };
 
 });
